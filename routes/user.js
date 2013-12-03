@@ -28,7 +28,8 @@ exports.register = function (req, res)
     console.log(req.body)
     User.create(req.body, function (err, record)
     {
-        if (err) throw new Error();
+        if (err)
+            res.render('register', { error: 'Account or password error' });
 
         File.create({ user_id: record._id, parent_id: '', name: 'image', type: 'folder' }, function (err, rec) {
             File.create({ user_id: record._id, parent_id: rec._id, filePath: 'http://img.aiyidu.com/forum/201012/08/110906gverr18l1h88rz39.jpg', name: '1.jpg', type: 'image/jpeg' }, function () {
