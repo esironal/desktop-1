@@ -115,9 +115,16 @@ define(["require", "exports", '../Compoment', '../core/src/Util'], function(requ
             $.extend(this, this.config);
         };
 
-        Panel.prototype.render = function (where) {
-            if (typeof where === "undefined") { where = "body"; }
-            _super.prototype.render.call(this, where);
+        Panel.prototype.render = function (x, y) {
+            _super.prototype.render.call(this, 'body');
+            if (!x)
+                $(this.element).css('left', Math.random() * 100 + 'px');
+else
+                $(this.element).css('left', x + 'px');
+            if (!y)
+                $(this.element).css('top', Math.random() * 100 + 'px');
+else
+                $(this.element).css('top', y + 'px');
             this.setFocus();
         };
 

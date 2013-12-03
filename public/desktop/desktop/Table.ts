@@ -40,8 +40,11 @@ om.Module.addApplication([{
                     key: 'baiduPlayer',
                     value: '百度影音'
                 }, {
-                    key: 'youkuPlayer',
-                    value: '优酷视频'
+                    key: 'flashPlayer',
+                    value: 'flash视频'
+                }, {
+                    key: 'image/jpeg',
+                    value: '图片'
                 }],
                 name: 'type'
             }, {
@@ -55,7 +58,7 @@ om.Module.addApplication([{
             buttons: [ {
                 text: '取消',
                 handler: function () {
-                    alert('取消')
+                    panel.destroy();
                 }
             }, {
                 text: '确定',
@@ -66,13 +69,14 @@ om.Module.addApplication([{
                         },
                         success: () => {
                             cmp.getItemsByPath(cmp.path);
+                            panel.destroy();
                         }
                     });
                 }
             }]
         });
 
-        panel.render();
+        panel.render(($('body').width() - 300) / 2, ($('body').height() - 600) / 2);
     }
 }]);
 

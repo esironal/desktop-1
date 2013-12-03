@@ -9,9 +9,13 @@ exports.login = function (req, res)
 
     User.find(req.body, function(err, records){
         if (err) throw new Error();
+        var record = records[0];
+       
+        
         console.log(records);
-        if( records.length ){
+        if (records.length) {
             req.session.user = records[0];
+            req.session.user_id = records[0]._id;
             res.redirect('/');
         }
         else
@@ -26,8 +30,23 @@ exports.register = function (req, res)
     {
         if (err) throw new Error();
 
-        File.create({ id: record._id, name: 'movie', path: '' });
-        File.create({ id: record._id, name: 'drama', path: '' });
+        File.create({ user_id: record._id, parent_id: '', name: 'image', type: 'folder' }, function (err, rec) {
+            File.create({ user_id: record._id, parent_id: rec._id, filePath: 'http://img.aiyidu.com/forum/201012/08/110906gverr18l1h88rz39.jpg', name: '1.jpg', type: 'image/jpeg' }, function () {
+
+            });
+            File.create({ user_id: record._id, parent_id: rec._id, filePath: 'http://pic3.bbzhi.com/mingxingbizhi/shaonvshidai/star_starjp_288683_9.jpg', name: '2.jpg', type: 'image/jpeg' }, function () {
+
+            });
+        });
+
+        File.create({ user_id: record._id, parent_id: '', name: 'mv', type: 'folder' }, function (err, rec) {
+            File.create({ user_id: record._id, parent_id: rec._id, filePath: 'http://player.youku.com/player.php/sid/XMjMxODU3Mzg0/v.swf', name: 'RunDevil', type: 'flashPlayer' }, function () {
+
+            });
+        });
+
+
+        res.redirect('/');
     });
 }
 

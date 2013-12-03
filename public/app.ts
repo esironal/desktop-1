@@ -84,7 +84,7 @@ $(document).ready(function(){
         code: 'player',
         name: '射手影音',
         icon: 'bplayer',
-        openType: ['video/mp4', 'baiduPlayer', 'youkuPlayer'],
+        openType: ['video/mp4', 'baiduPlayer', 'flashPlayer'],
         icon: '',
         handler: function (cfg)
         { 

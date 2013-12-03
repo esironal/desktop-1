@@ -53,8 +53,12 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
                                     value: '百度影音'
                                 },
                                 {
-                                    key: 'youkuPlayer',
-                                    value: '优酷视频'
+                                    key: 'flashPlayer',
+                                    value: 'flash视频'
+                                },
+                                {
+                                    key: 'image/jpeg',
+                                    value: '图片'
                                 }
                             ],
                             name: 'type'
@@ -72,7 +76,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
                         {
                             text: '取消',
                             handler: function () {
-                                alert('取消');
+                                panel.destroy();
                             }
                         },
                         {
@@ -84,6 +88,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
                                     },
                                     success: function () {
                                         cmp.getItemsByPath(cmp.path);
+                                        panel.destroy();
                                     }
                                 });
                             }
@@ -91,7 +96,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
                     ]
                 });
 
-                panel.render();
+                panel.render(($('body').width() - 300) / 2, ($('body').height() - 600) / 2);
             }
         }
     ]);

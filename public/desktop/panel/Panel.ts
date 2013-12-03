@@ -86,8 +86,16 @@ export class Panel extends com.Compoment{
         $.extend(this, this.config);
     }
 
-    render(where="body") { 
-        super.render(where);
+    render(x?, y?) { 
+        super.render('body');
+        if (!x)
+            $(this.element).css('left', Math.random() * 100 + 'px')
+        else
+            $(this.element).css('left', x + 'px')
+        if (!y)
+            $(this.element).css('top', Math.random() * 100 + 'px')
+        else
+            $(this.element).css('top', y + 'px')
         this.setFocus();
     }
 
