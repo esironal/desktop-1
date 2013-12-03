@@ -1,0 +1,109 @@
+﻿
+
+
+
+
+
+
+.icon
+{
+    background-position: 0px;
+    margin-top: 0px;
+}
+
+.file-browser-icon
+{
+    width:60px;
+    height:60px;
+    background:url("../themes/images/icons/computer.png") no-repeat ;
+    display: block;
+}
+
+.file-browser-task-icon
+{
+    background: url("../themes/images/icons/file-icon.png");
+    margin: 4px 6px 0 14px;
+    height: 32px;
+    width: 32px;
+}
+.bplayer-task-icon
+{
+    margin: 6px 7px 0 15px;
+    width: 30px;
+    height: 28px;
+    background: url("../themes/images/icons/bplayer.png");
+}
+
+.picasa-task-icon
+{
+    margin: 4px 7px 0 15px;
+    width: 29px;
+    height: 32px;
+    background: url("../themes/images/icons/picasa.png");
+}
+
+.baidu-task-icon
+{
+    margin: 3px 7px 0 12px;
+    width: 35px;
+    height: 34px;
+    background: url("../themes/images/icons/baidu-task.png");
+}
+
+.baidu-icon
+{
+    margin: 1px 3px 0 3px;
+    width: 55px;
+    height: 55px;
+    background: url("../themes/images/icons/baidu.png");
+}
+
+.icon-vs
+{
+    width:50px;
+    height:50px;
+    background:url("../themes/images/icons/vs-desktop.png") no-repeat ;
+    display: block;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.default-icon
+{
+    width:86px;
+    height:90px;
+    background:url("../themes/images/icons/visualStudio.png") no-repeat ;
+    display: block;
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: 0px;
+}
+.folder-icon
+{
+    width:75px;
+    height:90px;
+    background:url("../themes/images/icons/folder.png") no-repeat ;
+    display: block;
+    margin:0px 18px 0px 18px;
+}
+
+.video-icon
+{
+    width: 65px; 
+    height: 86px;  
+    background:url("../themes/images/icons/video-icon.png") no-repeat ;
+    display: block;
+    margin:4px 23px 3px 23px;
+
+}
+
+.icon-txt
+{
+    width:75px;
+    height:90px;
+    background:url("../themes/images/icons/txt.png")  no-repeat;
+    display: block;
+    margin:0px 18px 0px 18px;
+    padding-top:10px;
+}
+

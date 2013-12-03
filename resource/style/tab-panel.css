@@ -1,0 +1,30 @@
+﻿.tab-title-bar {
+    height:30px;
+    background:#bb4d45;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.tab-title
+{
+    height:30px;
+    width:100px;
+    margin-left:8px;
+    margin-top:10px;
+    float:left;
+    background:#e8d2a3;
+}
+
+
+.tab-title span
+{
+    font-size:14px;
+    padding-top:8px;
+    display:block;
+}
+
+.win-panel .header .active
+{
+    background:#fff;
+}

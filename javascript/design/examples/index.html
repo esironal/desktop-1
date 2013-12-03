@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone Demo</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="resource/css/base.css"/>
+
+<script src = "../src/core/src/Design.js" ></script>
+<script src = "../src/core/src/Util.js" ></script>
+<script src = "../src/core/src/Loader.js" ></script>
+<script src = "../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+<script src = "alm.common.js"></script>
+
+<link rel="stylesheet" href="../resource/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="../script/jquery.ztree-3.1.js"></script>
+<style>
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../src');
+	Design.require(['Design.grid.Tree','Design.tree.Panel','Design.data.Model','Design.tab.Panel']);
+	
+	var datas = jsonData;
+	var columns=[{text:'项目',width:250,dataIndex:'itemname',locked:true,'treeColumn':true},{text:'当前',width:100,dataIndex:'b0'}]
+	
+    var dates = expanddatelst(new Date(new Date('2012/04/09')), 0 * 12 + 1, 12);
+    for(var j=0;j<dates.length;j++){
+        columns.push({text:dates[j],width:100,dataIndex:'b'+(j+1)})
+    }
+	
+	
+	
+	Design.onReady(function(){
+		
+		Design.widget('tree', {
+			style: {
+				width:300,
+				height: 400
+			},
+			bodyStyle: {
+				overflow: 'auto'
+			},
+			renderTo: 'body'
+		});
+		
+	});	
+</script>
+
+</head>
+<body>
+	<div id = "demo" style="width:300px; height 500px"></div>
+</body>
+</html>

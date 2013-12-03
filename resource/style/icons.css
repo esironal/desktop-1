@@ -1,0 +1,51 @@
+﻿
+.icon
+{
+    background-position: 0 center;
+    margin-top: 0;
+}
+.file-browser-icon
+{
+    background: url("../themes/images/icons/computer.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 60px;
+    width: 60px;
+}
+.file-browser-task-icon
+{
+    background: url("../themes/images/icons/file-icon.png") repeat scroll 0 0 transparent;
+}
+.icon-vs
+{
+    background: url("../themes/images/icons/vs-desktop.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 50px;
+    margin-left: 5px;
+    margin-top: 10px;
+    width: 50px;
+}
+.folder-icon
+{
+    background: url("../themes/images/icons/folder.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 90px;
+    margin: 0 18px;
+    width: 75px;
+}
+.video-icon
+{
+    background: url("../themes/images/icons/video-icon.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 83px;
+    margin: 3px 23px;
+    width: 65px;
+}
+.icon-txt
+{
+    background: url("../themes/images/icons/txt.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 90px;
+    margin: 0 18px;
+    padding-top: 10px;
+    width: 75px;
+}

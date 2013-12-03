@@ -1,0 +1,25 @@
+﻿.shortcut-text
+{
+    height:auto;
+    margin-top:3px;
+    overflow:hidden;
+    font-size:13px;
+    text-align:center;
+    max-width: 110px;
+    word-wrap: break-word;
+    word-break:break-all;
+    word-break: normal;
+    padding-bottom:1px;
+}
+.shortcut-file-model
+{
+
+}
+
+
+
+
+.shortcut-dragover
+{
+    background:#fff4e8;
+}

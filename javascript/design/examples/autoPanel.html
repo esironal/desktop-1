@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone Demo</title>
+
+<!-- Core -->
+
+<script type="text/javascript" src="../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../resource/css/design-all.css"/>
+
+<script src = "../src/core/src/Design.js" ></script>
+<script src = "../src/core/src/Util.js" ></script>
+<script src = "../src/core/src/Loader.js" ></script>
+<script src = "../src/core/src/ClassManager.js" ></script>
+
+<link rel="stylesheet" href="../resource/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<script type="text/javascript" src="../script/jquery.ztree-3.1.js"></script>
+<style>
+
+
+
+</style>
+<script>
+	
+	
+	Design.Loader.setPath('Design', '../src');
+	Design.require(['Design.panel.Panel']);
+	
+	Design.onReady(function(){
+	
+		var view = new Design.widget('panel', {
+			title: {
+				text: 'HelloWorld'
+			},
+			bodyPadding: 10,
+			style: {
+				width: '90%',
+				height: '90%'
+			},
+			items: [{
+				style: {
+					width: 700,
+					height: 300
+				},
+				items: [{
+					style: {
+						width: '50%',
+						height: '50%',
+						'float': 'left'
+					},
+					html: 'zwl333'
+				},{
+					style: {
+						width: '50%',
+						height: '50%',
+						'float': 'left'
+					},
+					html: 'zwl333'
+				},{
+					style: {
+						width: '50%',
+						height: '50%',
+						'float': 'left'
+					},
+					html: 'zwl333'
+				},{
+					style: {
+						width: '50%',
+						height: '50%',
+						'float': 'left'
+					},
+					html: 'zwl333'
+				}]
+			}],
+			renderTo: 'body'
+		});
+		$('#resize').click(
+			function(){
+				view.resize(500, 400);
+			}
+		);
+		$('#resize2').click(
+			function(){
+				view.resize(800, 500);
+			}
+		);
+		$('#resize3').click(
+			function(){
+				view.resize(300, 200);
+			}
+		);
+		$('#resize4').click(
+			function(){
+				view.resize('70%', '70%');
+			}
+		);
+		//view.render('body');
+	});
+	
+</script>
+
+</head>
+<body>
+	<div id = "hei"></div>
+	
+	<button id = "resize">大</button>
+	<button id = "resize2">特大</button>
+	<button id = "resize3">小</button>
+	<button id = "resize4">百分比 70 %</button>
+</body>
+</html>

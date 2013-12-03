@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone Demo</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../resource/css/design-all.css"/>
+
+<script src = "../src/core/src/Design.js" ></script>
+<script src = "../src/core/src/Util.js" ></script>
+<script src = "../src/core/src/Loader.js" ></script>
+<script src = "../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+<script src = "alm.common.js"></script>
+
+<style>
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.Container','Design.data.Model','Design.data.Store','Design.tree.Panel','Design.form.Form']); 
+	
+	var datas = jsonData;
+	var datas2 = [{id:1,date: '2012-03-21', value: '0.14'},{id:2,date: '2012-03-21', value: '0.14'},{id:3,date: '2012-03-21', value: '0.14'},{id:4,date: '2012-03-21', value: '0.14'},{id:5,date: '2012-03-21', value: '0.14'}];
+	var columns=[{text:'项目',width:250,dataIndex:'itemname',locked:true,'treeColumn':true},{text:'当前',width:100,dataIndex:'b0'}]
+	
+    var dates = expanddatelst(new Date(new Date('2012/04/09')), 0 * 12 + 1, 12);
+    for(var j=0;j<dates.length;j++){
+        columns.push({text:dates[j],width:100,dataIndex:'b'+(j+1)})
+    }
+	
+	
+	Design.onReady(function(){
+		var store2;
+		var index = 100,panel;
+		var form = Design.widget('form', {
+			style:{
+				width: 370,
+				height: 280
+			},
+			drag: true,
+			title: {
+				text: '添加'
+			},
+			buttons: [{
+				text: '确定', 
+				handler: function(_form) {
+					var model = _form.saveModel();
+					if (!model.get('id')) {
+						panel.getChild(1).getStore().add(model);
+						model.set('id', index++);
+					}
+					_form.remove();
+				}
+			},{
+				text: '取消', 
+				handler: function() {
+					alert('取消');
+				}
+			}],
+			bodyPadding: 50,
+			items: [{
+				xtype:'textfield',
+				label:'日期',
+				labelWidth: 50,
+				name:'date',
+				fieldStyle: {
+					width: 200
+				}
+			},{
+				xtype:'textfield',
+				label:'值',
+				labelWidth: 50,
+				name:'value',
+				fieldStyle: {
+					width: 200
+				}
+			}]
+		});
+		
+		var columns2 = [{text:'日期',width:250,dataIndex:'date','treeColumn':true},{text:'值',width:200,dataIndex:'value',align:'right'},{text:'编辑',width:200,align:'center',editor:{
+			xtype:'container',
+			style:{width: 37,backgorund:'red'},
+			items:[{
+			xtype:'button',
+				iconCls: 'icon-plus',
+				style: {'float': 'left'},
+				handler: function(a,b) {
+					var model = (Design.getCmp($(this.el).parents('td')[0].id).model)
+					form.render('body');
+					form.setModel(model);
+				}
+			},{
+				xtype:'button',
+				iconCls: 'icon-plus',
+				style: {'float': 'left'},
+				handler: function() {
+					var model = (Design.getCmp($(this.el).parents('td')[0].id).model);
+					panel.getChild(1).getStore().remove(model)
+				}
+			}]
+		}}];
+		
+		Design.define('User', {
+			extend: 'Design.data.Model',
+			fields: (function() {
+				var list = [{name:'itemname', type:'string'}];
+				for (var i = 0; i < 100; i++) {
+					list.push({name:'b' + i, type:'int'});
+				}
+				return list;
+			})()
+		});
+		
+		Design.define('RateFactor', {
+			extend: 'Design.data.Model',
+			fields: [
+			  {name: 'id', type:'int'},
+			  {name: 'name', type:'string'},
+			  {name: 'currency', type:'string'},
+			  {name: 'memo', type:'string'},
+			  {name: 'descr', type:'string'}
+			]
+		});
+		var heihei = new RateFactor({name:'zwl'})
+		heihei.set({'name':'heihei'})
+		
+		
+		var store = Design.create('Design.data.Store', {
+			model: 'User',
+			type: 'tree',
+			data: jsonData
+		});
+		
+		Design.define('lilv', {
+			extend: 'Design.data.Model',
+			fields: [
+				{name:'date', type:'date'},
+				{name:'value', type:'string'},
+				{name:'id', type:'int'}
+			]
+		});
+		
+		store2 = Design.create('Design.data.Store', {
+			model: 'lilv',
+			type: 'tree',
+			data: datas2,
+			id:'col2'
+		});
+		store3 = Design.create('Design.data.Store', {
+			model: 'lilv',
+			type: 'tree',
+			data: datas2,
+			id:'col3'
+		});
+		
+		panel = Design.widget('panel', {
+			style: {
+				width: '100%',
+				height: '100%'
+			},
+			items: [{
+				xtype: 'tree',
+				colWidth: 280,
+				title: {
+					text: 'dd'
+				},
+				style: {
+					width: '20%',
+					height: '100%',
+					'float': 'left'	
+				},
+				displayField: 'itemname',
+				store: store
+			},{
+				xtype: 'treepanel',
+				toolbar: [{
+					dock: 'top',
+					items: [{
+						xtype:'button',
+						label: '显示图表',
+						labelWidth: 50,
+						handler: function() {
+							var items = panel.getItems();
+							if (items[2].isShow()) {
+								items[0].resize('20%', '100%');
+								items[1].resize('80%', '100%');
+								items[2].hide();
+							}
+							else {
+								items[0].resize('20%', '60%');
+								items[1].resize('80%', '60%');
+								items[2].show();
+							}
+						},
+						iconCls: 'icon-plus'
+					},{
+						xtype:'button',
+						label: '添加日期',
+						labelWidth: 50,
+						handler: function() {
+							form.render('body');
+							form.setModel(new lilv());
+						},
+						iconCls: 'icon-plus'
+					},{
+						xtype:'button',
+						label: 'bind',
+						labelWidth: 50,
+						handler: function() {
+							panel.getChild(1).bindStore(store3);
+						},
+						iconCls: 'icon-plus'
+					}]
+				}],
+				title: {
+					text: 'dfffd'
+				},
+				style: {
+					width: '80%',
+					height: '100%',
+					'float': 'left'
+				},
+				columns: columns2,
+				store: store2
+			},{
+				xtype: 'panel',
+				title: {
+					text: 'chart'
+				},
+				style: {
+					width: '100%',
+					'clear': 'left',
+					height:'40%',
+					display:'none'
+				}
+			}]
+		});
+		
+		panel.render('body');
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+
+<style>
+
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.grid.Panel', 'Design.data.Model','Design.data.Store']); 
+	
+	
+	
+	var myData = [
+        {company: '3m Co'},
+        {company: 'Alcoa Inc'},
+        {company: 'Altria Group Inc'},
+        {company: 'American Express Company'},
+        {company: 'American International Group, Inc.'},
+        {company: 'AT&T Inc.'},
+        {company: 'Boeing Co.'},
+        {company: 'Caterpillar Inc.'},
+        {company: 'Citigroup, Inc.'},
+        {company: 'E.I. du Pont de Nemours and Company'},
+        {company: 'Exxon Mobil Corp'},
+        {company: 'General Electric Company'},
+        {company: 'General Motors Corporation'},
+        {company: 'Hewlett-Packard Co.'},
+        {company: 'Honeywell Intl Inc'},
+        {company: 'Intel Corporation'},
+        {company: 'International Business Machines'},
+        {company: 'Johnson & Johnson'},
+        {company: 'JP Morgan & Chase & Co'},
+        {company: 'McDonald\'s Corporation'},
+        {company: 'Merck & Co., Inc.'},
+        {company: 'Microsoft Corporation'},
+        {company: 'Pfizer Inc'},
+        {company: 'The Coca-Cola Company'},
+        {company: 'The Home Depot, Inc.'},
+        {company: 'The Procter & Gamble Company'},
+        {company: 'United Technologies Corporation'},
+        {company: 'Verizon Communications'},
+        {company: 'Wal-Mart Stores, Inc.'}
+    ];
+	
+	
+	var date = new Date();
+	
+	for (var i = 0; i < myData.length; i++) {
+		for (var j = 0; j < 60; j++) {
+			myData[i]['b' + j] = parseInt(Math.random() * 10000);
+		}
+	}
+	
+	
+	
+	Design.onReady(function(){
+		
+		
+		Design.define('GridModel', {
+			extend: 'Design.data.Model',
+			fields: (function() {
+				var fields = [{
+					name: 'company',
+					type: 'string'
+				}];
+				for (var i = 0; i < 60; i++) {
+					fields.push({
+						name: 'b' + i,
+						type: 'string'
+					});
+				}
+				return fields;
+			})()
+			
+		});
+		
+		
+		var store = Design.create('Design.data.Store', {
+			model: 'GridModel',
+			data: myData
+		});
+		
+		var manyColumns = [];
+		
+		for (var i = 0; i < 5; i++) {
+			var columns = [{text: 'company', width: 200, dataIndex: 'company', locked: true}];
+			for (var j = 0; j < 12; j++) {
+				columns.push({renderer: price, text: Design.dateFormat(Design.addMonths(date, i * 12 + j),"yyyy年MM月"), align: 'right', width: 200, dataIndex: 'b' + (i * 12 + j)});
+			}
+			manyColumns.push(columns);
+		}
+		
+		function price(m,val) {
+			if (!val) {
+				return val
+			}
+			var str =  "$ " + val;
+			if (parseInt(val) < 1000) {
+				//str = "<span style = 'color: red'>" + str + "</span>";
+			}
+			return str;
+		}
+		
+		var grid = Design.widget('grid', {
+			title: {
+				text: 'dd'
+			},
+			columnHeight: 40,
+			style: {
+				height: '100%',
+				width: '100%'
+			},
+			manyColumns: manyColumns,
+			store:store,
+			toolbar: [{
+				dock: 'bottom',
+				items: [{
+					xtype: 'pagination',
+					store: store,
+					manyColumns: manyColumns,
+					style: {
+						float: 'right'
+					}
+				}]
+			}]
+		});
+		grid.render('body');
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

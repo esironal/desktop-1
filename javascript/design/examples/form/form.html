@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+<script src = "alm.common.js"></script>
+
+
+<script src = "../../script/jscal2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/steel/steel.css"/>
+
+<style>
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.form.Form']);  
+	
+	Design.onReady(function(){
+	
+		var form = Design.widget('form', {
+			style:{
+				width: 400,
+				height: 550
+			},
+			drag: true,
+			title: {
+				text: 'form'
+			},
+			bodyPadding: 30,
+			fieldDefaults: {
+				labelWidth: 50,
+				fieldStyle:{
+					width: 280
+				}
+			},
+			items: [{
+				xtype:'textfield',
+				id: 'name',
+				label:'姓名',
+				allowBlank: false,
+				name:'name'
+			},{
+				xtype:'combobox',
+				label:'性别',
+				displayField: 'value',
+				valueField: 'id',
+				allowBlank: false,
+				data: [{id: 1, value: '男'}, {id: 0, value: '女'}],
+				name:'holdData'
+			},{
+				xtype:'datefield',
+				id: 'date',
+				label:'日期',
+				allowBlank: false,
+				name:'name'
+			},{
+				xtype:'fieldcontainer',
+				label:'电话',
+				items:[
+					{xtype:'displayfield',value:'(',fieldStyle:{'padding-right':'5px'}},
+					{xtype:'textfield',labelWidth:0,fieldStyle:{width:'23px'}},
+					{xtype:'displayfield',value:')',fieldStyle:{'padding-left':'5px','padding-right':'5px'}},
+					{xtype:'textfield',labelWidth:0,fieldStyle:{width:'30px'}},
+					{xtype:'displayfield',value:'-',fieldStyle:{'padding-left':'5px','padding-right':'5px'}},
+					{xtype:'textfield',labelWidth:0,fieldStyle:{width:'30px'}
+				}]
+			},{
+				xtype:'textareafield',
+				label:'备注',
+				name:'name'
+			},{
+				xtype:'fieldset',
+				title:'选填内容',
+				items:[{
+					xtype:'fieldcontainer',
+					label:'爱好',
+					labelWidth: 50,
+					fieldStyle:{
+						width:185,
+						height:100
+					},
+					items:(function(){
+						var items = [{
+							xtype:'radio',
+							name:'color',
+							fieldStyle:{
+								width:70
+							},
+							boxLabel:'美工'
+						}]
+						for(var i=0;i<10;i++){
+							items.push({
+								xtype:'radio',
+								name:'color',
+								fieldStyle:{
+									width:70
+								},
+								boxLabel:'码农'
+							})
+						}
+						return items
+					})()
+				},{
+					xtype:'textfield',
+					label:'姓名',
+					labelWidth: 50,
+					fieldStyle:{
+						width:'185'
+					}
+				},{
+					xtype:'fieldcontainer',
+					label:'宠物',
+					items:[{
+						xtype:'checkbox',
+						boxLabel:'dog'
+					},{
+						xtype:'checkbox',
+						boxLabel:'cat'
+					}]
+				}]
+			}],
+			buttons: [{
+				text: '确定',
+				handler: function() {
+					var name = Design.getCmp('name');
+					alert(name.getValue());
+					//alert('ff');
+				}
+			}, {
+				text: '取消',
+				handler: function() {
+					alert('cancel');
+				}
+			}]
+		});
+		
+		
+		
+		
+		form.show();
+		
+		
+	});	
+</script>
+
+</head>
+<body>
+
+	<div id = "main" style = "width: 1000px; height: 1000px;"></div>
+
+</body>
+</html>

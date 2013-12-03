@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design Demo</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+
+<script src = "../../script/chart/chart/highcharts.js" ></script>
+<script src = "../../script/chart/highstock.js" ></script>
+<script src = "../../script/chart/modules/exporting.js" ></script>
+<script src = "../../script/jquery.ztree-3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/zTreeStyle/zTreeStyle.css"/>
+
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.chart.Chart']); 
+
+	var data = [['第一季度', 20],['第二季度', 20],['第三季度', 20],['第四季度', 20],['第五季度', 20]];
+
+	Design.onReady(function(){
+		
+		var chart = Design.widget('chart', {
+			title: {
+				text: 'chart'
+			},
+			drag: true,
+			bodyPadding: 0,
+			style: {
+				width: 500,
+				height: 500,
+				'float': 'left'	
+			},
+			datas: jsonData
+		});
+		chart.show('body');
+		chart.setPieChart(data, '营业额');
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+
+
+<script src = "../../script/jscal2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/steel.css"/>
+
+<style>
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.form.Form']);  
+	
+	Design.onReady(function(){
+	    
+		var form = Design.widget('form', {
+			style:{
+				width: 406,
+				height: 460
+			},
+			drag: true,
+			title: {
+				text: 'fieldcontainer'
+			},
+			bodyPadding: 15,
+			fieldDefaults: {
+				labelWidth: 100,
+				fieldStyle:{
+					width: 180
+				},
+				labelStyle: {
+					'font-weight':'bold',
+					'padding':'0'
+				},
+				labelAlign: 'top'
+			},
+			items: [{
+				xtype:'fieldcontainer',
+				label:'Your Name',
+				labelWidth: 100,
+				fieldDefaults: {
+					labelWidth: 50,
+					fieldStyle:{
+						width: 110
+					}
+				},
+				items:[{
+					xtype: 'textfield',
+					name: 'firstName',
+					labelAlign: 'top',
+					label: 'First',
+					allowBlank: false
+				}, {
+					xtype: 'textfield',
+					labelAlign: 'top',
+					name: 'middleInitial',
+					label: 'MI',
+					labelWidth: 30,
+					fieldStyle:{
+						width: 30
+					},
+					style:{
+						'margin-left': '10px',
+						'margin-right': '10px'
+					}
+				}, {
+					xtype: 'textfield',
+					name: 'lastName',
+					labelAlign: 'top',
+					label: 'Last',
+					allowBlank: false,
+					fieldStyle:{
+						width: 200
+					}
+				}]
+			},{
+				xtype: 'textfield',
+				name: 'firstName',
+				vtype: 'email',
+				label: 'Your Email Address',
+				allowBlank: false,
+				fieldStyle:{
+					width: 364
+				}
+			}, {
+				xtype: 'textfield',
+				label: 'Subject',
+				allowBlank: false,
+				fieldStyle:{
+					width: 364
+				}
+			}, {
+				xtype: 'textareafield',
+				label: 'Message',
+				allowBlank: false,
+				fieldStyle:{
+					width: 364,
+					height: 130
+				}
+			}],
+			buttons: [{
+				text: 'Save',
+				handler: function() {
+					alert('ff');
+				}
+			}, {
+				text: 'Cancel',
+				handler: function() {
+					alert('cancel');
+				}
+			}]
+		});
+		
+		
+		
+		
+		form.show();
+		
+		
+	});	
+</script>
+
+</head>
+<body>
+
+	<div id = "main" style = "width: 1000px; height: 1000px;"></div>
+
+</body>
+</html>

@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{AA510D3F-BFCB-47D6-B2DE-32310EEEC735}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="javascript\bootstrap.js" />
+    <Content Include="javascript\design\examples\alm.common.js" />
+    <Content Include="javascript\design\examples\autoPanel.html" />
+    <Content Include="javascript\design\examples\chart\chart.html" />
+    <Content Include="javascript\design\examples\chart\chartNav.html" />
+    <Content Include="javascript\design\examples\chart\jsonData.js" />
+    <Content Include="javascript\design\examples\editTable.html" />
+    <Content Include="javascript\design\examples\form\contact-form.html" />
+    <Content Include="javascript\design\examples\form\fieldcontainer.html" />
+    <Content Include="javascript\design\examples\form\form-grid.html" />
+    <Content Include="javascript\design\examples\form\form.html" />
+    <Content Include="javascript\design\examples\grid\grid-edit.html" />
+    <Content Include="javascript\design\examples\grid\grid-pager.html" />
+    <Content Include="javascript\design\examples\grid\grid-pager2.html" />
+    <Content Include="javascript\design\examples\grid\grid-toolbar.html" />
+    <Content Include="javascript\design\examples\grid\grid.html" />
+    <Content Include="javascript\design\examples\grid\group-header-grid.html" />
+    <Content Include="javascript\design\examples\grid\jsonData.js" />
+    <Content Include="javascript\design\examples\grid\panel.html" />
+    <Content Include="javascript\design\examples\grid\progress-bar-pager.html" />
+    <Content Include="javascript\design\examples\grid\progress-bar-pager2.html" />
+    <Content Include="javascript\design\examples\grid\tree-grid.html" />
+    <Content Include="javascript\design\examples\index.html" />
+    <Content Include="javascript\design\examples\jsonData.js" />
+    <Content Include="javascript\design\examples\organTree.html" />
+    <Content Include="javascript\design\examples\Panel.html" />
+    <Content Include="javascript\design\examples\super\alm.common.js" />
+    <Content Include="javascript\design\examples\super\jsonData.js" />
+    <Content Include="javascript\design\examples\super\rateSimulating.html" />
+    <Content Include="javascript\design\examples\super\report.html" />
+    <Content Include="javascript\design\examples\super\termStructor.html" />
+    <Content Include="javascript\design\examples\tab\tab.html" />
+    <Content Include="javascript\design\examples\tree.html" />
+    <Content Include="javascript\design\examples\tree\data.js" />
+    <Content Include="javascript\design\examples\tree\form\contact-form.html" />
+    <Content Include="javascript\design\examples\tree\form\fieldcontainer.html" />
+    <Content Include="javascript\design\examples\tree\form\form-grid.html" />
+    <Content Include="javascript\design\examples\tree\form\form.html" />
+    <Content Include="javascript\design\examples\tree\jsonData.js" />
+    <Content Include="javascript\design\examples\tree\tree.html" />
+    <Content Include="javascript\design\examples\tree\tree2.html" />
+    <Content Include="javascript\design\resource\css\design-all.css" />
+    <Content Include="javascript\design\resource\css\jscal2\border-radius.css" />
+    <Content Include="javascript\design\resource\css\jscal2\gold\brushed-steel.jpg" />
+    <Content Include="javascript\design\resource\css\jscal2\gold\coolbg.png" />
+    <Content Include="javascript\design\resource\css\jscal2\gold\gold.css" />
+    <Content Include="javascript\design\resource\css\jscal2\gold\gold.jpg" />
+    <Content Include="javascript\design\resource\css\jscal2\img\cool-bg-hard-inv.png" />
+    <Content Include="javascript\design\resource\css\jscal2\img\cool-bg-hard.png" />
+    <Content Include="javascript\design\resource\css\jscal2\img\cool-bg-inv.png" />
+    <Content Include="javascript\design\resource\css\jscal2\img\cool-bg.png" />
+    <Content Include="javascript\design\resource\css\jscal2\img\drop-down.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\drop-up.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\nav-left-x2.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\nav-left.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\nav-right-x2.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\nav-right.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\img\time-down.png" />
+    <Content Include="javascript\design\resource\css\jscal2\img\time-up.png" />
+    <Content Include="javascript\design\resource\css\jscal2\jscal2.css" />
+    <Content Include="javascript\design\resource\css\jscal2\matrix\matrix.css" />
+    <Content Include="javascript\design\resource\css\jscal2\matrix\nav-left-x2.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\matrix\nav-left.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\matrix\nav-right-x2.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\matrix\nav-right.gif" />
+    <Content Include="javascript\design\resource\css\jscal2\reduce-spacing.css" />
+    <Content Include="javascript\design\resource\css\jscal2\shadow-b.png" />
+    <Content Include="javascript\design\resource\css\jscal2\steel\brushed-steel.jpg" />
+    <Content Include="javascript\design\resource\css\jscal2\steel\brushed-steel.png" />
+    <Content Include="javascript\design\resource\css\jscal2\steel\coolbg.png" />
+    <Content Include="javascript\design\resource\css\jscal2\steel\steel.css" />
+    <Content Include="javascript\design\resource\css\jscal2\steel\steel.jpg" />
+    <Content Include="javascript\design\resource\css\jscal2\win2k\win2k.css" />
+    <Content Include="javascript\design\resource\css\panelWindow.css" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\loading.gif" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="javascript\design\resource\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="javascript\design\resource\themes\images\datagrid-header.gif" />
+    <Content Include="javascript\design\resource\themes\images\datagrid-hover.gif" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows-1.png" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows-2.png" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows-3.png" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows-4.png" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows.gif" />
+    <Content Include="javascript\design\resource\themes\images\default\tree\arrows.png" />
+    <Content Include="javascript\design\resource\themes\images\elbow-end-minus-nl.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-end-minus.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-end-plus-nl.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-end-plus.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-end.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-line.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-minus-nl.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-minus.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-plus-nl.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow-plus.gif" />
+    <Content Include="javascript\design\resource\themes\images\elbow.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-first-disabled.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-first.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-last-disabled.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-last.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-next-disabled.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-next.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-prev-disabled.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\page-prev.gif" />
+    <Content Include="javascript\design\resource\themes\images\grid\refresh.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\30672.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\application_edit.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\arrow_divide.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\arrow_left.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\arrow_right.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\arrow_switch.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\chart_organisation_add.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\ico-edit.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\ico-grow.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-add.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-add.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-building.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-delete.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-export.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-import.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-import.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-remove.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-save.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-save.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-saveall.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-search.gif" />
+    <Content Include="javascript\design\resource\themes\images\icon\icon-search.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\organ.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\page_white_edit.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\page_white_wrench.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\setting.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\shape_align_center.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\sitemap.png" />
+    <Content Include="javascript\design\resource\themes\images\icon\table_row_insert.png" />
+    <Content Include="javascript\design\resource\themes\images\invalid_line.gif" />
+    <Content Include="javascript\design\resource\themes\images\line.png" />
+    <Content Include="javascript\design\resource\themes\images\listboxtitbg.gif" />
+    <Content Include="javascript\design\resource\themes\images\tabletitbg.gif" />
+    <Content Include="javascript\design\resource\themes\images\tabs.png" />
+    <Content Include="javascript\design\resource\themes\images\tool-sprite-tpl.gif" />
+    <Content Include="javascript\design\resource\themes\images\tool-sprites.gif" />
+    <Content Include="javascript\design\resource\themes\images\tools-sprites-trans.gif" />
+    <Content Include="javascript\design\script\chart\adapters\mootools-adapter.js" />
+    <Content Include="javascript\design\script\chart\adapters\mootools-adapter.src.js" />
+    <Content Include="javascript\design\script\chart\adapters\prototype-adapter.js" />
+    <Content Include="javascript\design\script\chart\adapters\prototype-adapter.src.js" />
+    <Content Include="javascript\design\script\chart\chart\adapters\mootools-adapter.js" />
+    <Content Include="javascript\design\script\chart\chart\adapters\mootools-adapter.src.js" />
+    <Content Include="javascript\design\script\chart\chart\adapters\prototype-adapter.js" />
+    <Content Include="javascript\design\script\chart\chart\adapters\prototype-adapter.src.js" />
+    <Content Include="javascript\design\script\chart\chart\highcharts.js" />
+    <Content Include="javascript\design\script\chart\chart\highcharts.src.js" />
+    <Content Include="javascript\design\script\chart\chart\modules\exporting.js" />
+    <Content Include="javascript\design\script\chart\chart\modules\exporting.src.js" />
+    <Content Include="javascript\design\script\chart\chart\themes\dark-blue.js" />
+    <Content Include="javascript\design\script\chart\chart\themes\dark-green.js" />
+    <Content Include="javascript\design\script\chart\chart\themes\gray.js" />
+    <Content Include="javascript\design\script\chart\chart\themes\grid.js" />
+    <Content Include="javascript\design\script\chart\highstock.js" />
+    <Content Include="javascript\design\script\chart\highstock.src.js" />
+    <Content Include="javascript\design\script\chart\modules\exporting.js" />
+    <Content Include="javascript\design\script\chart\modules\exporting.src.js" />
+    <Content Include="javascript\design\script\chart\themes\dark-blue.js" />
+    <Content Include="javascript\design\script\chart\themes\dark-green.js" />
+    <Content Include="javascript\design\script\chart\themes\gray.js" />
+    <Content Include="javascript\design\script\chart\themes\grid.js" />
+    <Content Include="javascript\design\script\chart\themes\skies.js" />
+    <Content Include="javascript\design\script\ext-core-debug.js" />
+    <Content Include="javascript\design\script\jquery-1.7.1.js" />
+    <Content Include="javascript\design\script\jquery-ui-1.8.18.js" />
+    <Content Include="javascript\design\script\jquery.ajaxfileupload.js" />
+    <Content Include="javascript\design\script\jquery.ztree-3.1.js" />
+    <Content Include="javascript\design\script\jscal2.js" />
+    <Content Include="javascript\design\script\template.js" />
+    <Content Include="javascript\design\src\button\Button.js" />
+    <Content Include="javascript\design\src\chart\Chart.js" />
+    <Content Include="javascript\design\src\Compoment.js" />
+    <Content Include="javascript\design\src\Container.js" />
+    <Content Include="javascript\design\src\core\src\ClassManager.js" />
+    <Content Include="javascript\design\src\core\src\Design.js" />
+    <Content Include="javascript\design\src\core\src\Loader.js" />
+    <Content Include="javascript\design\src\core\src\Observable.js" />
+    <Content Include="javascript\design\src\core\src\test\unit\assert.js" />
+    <Content Include="javascript\design\src\core\src\test\unit\test.html" />
+    <Content Include="javascript\design\src\core\src\test\unit\TestCase.js" />
+    <Content Include="javascript\design\src\core\src\test\unit\test\util-test.js" />
+    <Content Include="javascript\design\src\core\src\Util.js" />
+    <Content Include="javascript\design\src\core\test\unit\assert.js" />
+    <Content Include="javascript\design\src\core\test\unit\test.html" />
+    <Content Include="javascript\design\src\core\test\unit\TestCase.js" />
+    <Content Include="javascript\design\src\core\test\unit\test\assert-test.js" />
+    <Content Include="javascript\design\src\custom\AccitemStrategy.js" />
+    <Content Include="javascript\design\src\custom\bas\VirtualOrgan.js" />
+    <Content Include="javascript\design\src\custom\ClassCurd.js" />
+    <Content Include="javascript\design\src\custom\mod\TermStructure.js" />
+    <Content Include="javascript\design\src\custom\ProgressPanel.js" />
+    <Content Include="javascript\design\src\custom\report\Report.js" />
+    <Content Include="javascript\design\src\data\Errors.js" />
+    <Content Include="javascript\design\src\data\Field.js" />
+    <Content Include="javascript\design\src\data\Model.js" />
+    <Content Include="javascript\design\src\data\SortTypes.js" />
+    <Content Include="javascript\design\src\data\Store.js" />
+    <Content Include="javascript\design\src\data\Types.js" />
+    <Content Include="javascript\design\src\data\Validations.js" />
+    <Content Include="javascript\design\src\form\field\Base.js" />
+    <Content Include="javascript\design\src\form\field\CheckBox.js" />
+    <Content Include="javascript\design\src\form\field\Combobox.js" />
+    <Content Include="javascript\design\src\form\field\Date.js" />
+    <Content Include="javascript\design\src\form\field\DisplayField.js" />
+    <Content Include="javascript\design\src\form\field\FieldContainer.js" />
+    <Content Include="javascript\design\src\form\field\FieldSet.js" />
+    <Content Include="javascript\design\src\form\field\File.js" />
+    <Content Include="javascript\design\src\form\field\Multiselect.js" />
+    <Content Include="javascript\design\src\form\field\Radio.js" />
+    <Content Include="javascript\design\src\form\field\RadioGroup.js" />
+    <Content Include="javascript\design\src\form\field\Text.js" />
+    <Content Include="javascript\design\src\form\field\TextArea.js" />
+    <Content Include="javascript\design\src\form\field\VType.js" />
+    <Content Include="javascript\design\src\form\field\VTypes.js" />
+    <Content Include="javascript\design\src\form\Form.js" />
+    <Content Include="javascript\design\src\grid\Cell.js" />
+    <Content Include="javascript\design\src\grid\Container.js" />
+    <Content Include="javascript\design\src\grid\EditGrid.js" />
+    <Content Include="javascript\design\src\grid\Panel.js" />
+    <Content Include="javascript\design\src\grid\Row.js" />
+    <Content Include="javascript\design\src\grid\Table.js" />
+    <Content Include="javascript\design\src\grid\Tree.js" />
+    <Content Include="javascript\design\src\header\Header.js" />
+    <Content Include="javascript\design\src\menu\Menu.js" />
+    <Content Include="javascript\design\src\panel\jsonData.js" />
+    <Content Include="javascript\design\src\panel\Panel.js" />
+    <Content Include="javascript\design\src\tab\Header.js" />
+    <Content Include="javascript\design\src\tab\Panel.js" />
+    <Content Include="javascript\design\src\toolbar\Pagination.js" />
+    <Content Include="javascript\design\src\toolbar\Toolbar.js" />
+    <Content Include="javascript\design\src\tree\Tree.js" />
+    <Content Include="javascript\design\src\util\HashMap.js" />
+    <Content Include="javascript\design\src\util\Observable.js" />
+    <Content Include="javascript\jquery-2.0.2.js" />
+    <Content Include="javascript\LAB.src.js" />
+    <Content Include="javascript\require.js" />
+    <Content Include="javascript\template.js" />
+    <TypeScriptCompile Include="public\app.ts" />
+    <Content Include="models\User.js" />
+    <Content Include="models\File.js" />
+    <Content Include="models\Application.js" />
+    <Content Include="public\app.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\menu\ContextMenu.ts" />
+    <TypeScriptCompile Include="public\desktop\desktop\OpenMode.ts" />
+    <TypeScriptCompile Include="public\desktop\application\Picasa.ts" />
+    <Content Include="public\desktop\application\Picasa.js">
+      <DependentUpon>Picasa.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\desktop\OpenMode.js">
+      <DependentUpon>OpenMode.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\form\Form.ts" />
+    <TypeScriptCompile Include="public\desktop\form\fields\Combobox.ts" />
+    <TypeScriptCompile Include="public\desktop\form\fields\BaseField.ts" />
+    <Content Include="public\desktop\form\fields\Combobox.js">
+      <DependentUpon>Combobox.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\form\fields\TextField.ts" />
+    <Content Include="public\desktop\form\fields\TextField.js">
+      <DependentUpon>TextField.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\form\Form.js">
+      <DependentUpon>Form.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\menu\ContextMenu.js">
+      <DependentUpon>ContextMenu.ts</DependentUpon>
+    </Content>
+    <Content Include="public\javascripts\dist\css\bootstrap-theme.css" />
+    <Content Include="public\javascripts\dist\css\bootstrap-theme.min.css" />
+    <Content Include="public\javascripts\dist\css\bootstrap.css" />
+    <Content Include="public\javascripts\dist\css\bootstrap.min.css" />
+    <Content Include="public\javascripts\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\javascripts\dist\js\bootstrap.js" />
+    <Content Include="public\javascripts\dist\js\bootstrap.min.js" />
+    <Content Include="public\javascripts\jquery-2.0.2.js" />
+    <Content Include="public\javascripts\lib\backstretch.min.js" />
+    <Content Include="public\javascripts\lib\bootstrap.js" />
+    <Content Include="public\javascripts\lib\jquery.js" />
+    <Content Include="public\javascripts\lib\typica-login.js" />
+    <Content Include="public\javascripts\require.js" />
+    <Content Include="public\javascripts\template.js" />
+    <Content Include="public\resource\lib\bootstrap-responsive.min.css" />
+    <Content Include="public\resource\lib\bootstrap.min.css" />
+    <Content Include="public\resource\lib\typica-login.css" />
+    <Content Include="public\resource\style\desktop.css" />
+    <Content Include="public\resource\style\filebrowser.css" />
+    <Content Include="public\resource\style\form.css" />
+    <Content Include="public\resource\style\global.css" />
+    <Content Include="public\resource\style\icons.css" />
+    <Content Include="public\resource\style\menu.css" />
+    <Content Include="public\resource\style\panel.css" />
+    <Content Include="public\resource\style\tab-panel.css" />
+    <Content Include="public\resource\style\taskbar.css" />
+    <Content Include="public\resource\style\shortcut.css" />
+    <Content Include="public\resource\themes\images\cipan.png" />
+    <Content Include="public\resource\themes\images\cipan2.png" />
+    <Content Include="public\resource\themes\images\desktop\file-click.png" />
+    <Content Include="public\resource\themes\images\desktop\file-double-click.png" />
+    <Content Include="public\resource\themes\images\desktop\file-double-focus.png" />
+    <Content Include="public\resource\themes\images\desktop\file-double.png" />
+    <Content Include="public\resource\themes\images\desktop\file-focus.png" />
+    <Content Include="public\resource\themes\images\desktop\file-many-click.png" />
+    <Content Include="public\resource\themes\images\desktop\file-many-focus.png" />
+    <Content Include="public\resource\themes\images\desktop\file-many.png" />
+    <Content Include="public\resource\themes\images\desktop\file.png" />
+    <Content Include="public\resource\themes\images\desktop\start-active.png" />
+    <Content Include="public\resource\themes\images\desktop\start.png" />
+    <Content Include="public\resource\themes\images\desktop\task-bg-double.png" />
+    <Content Include="public\resource\themes\images\desktop\task-bg-many.png" />
+    <Content Include="public\resource\themes\images\desktop\task-bg.png" />
+    <Content Include="public\resource\themes\images\desktop\task-close.png" />
+    <Content Include="public\resource\themes\images\desktop\task-cmp-background.png" />
+    <Content Include="public\resource\themes\images\desktop\task-focus-bg.png" />
+    <Content Include="public\resource\themes\images\filder.png" />
+    <Content Include="public\resource\themes\images\icons\baidu-task.png" />
+    <Content Include="public\resource\themes\images\icons\baidu.png" />
+    <Content Include="public\resource\themes\images\icons\computer.png" />
+    <Content Include="public\resource\themes\images\icons\file-icon.png" />
+    <Content Include="public\resource\themes\images\icons\folder.png" />
+    <Content Include="public\resource\themes\images\icons\bplayer.png" />
+    <Content Include="public\resource\themes\images\icons\picasa.png" />
+    <Content Include="public\resource\themes\images\icons\txt.png" />
+    <Content Include="public\resource\themes\images\icons\video-icon.png" />
+    <Content Include="public\resource\themes\images\icons\visualStudio.png" />
+    <Content Include="public\resource\themes\images\icons\vs-desktop.png" />
+    <Content Include="public\resource\themes\images\icons\vs-icon.png" />
+    <Content Include="public\resource\themes\images\icons\wodediannao.png" />
+    <Content Include="public\resource\themes\images\rain1920_1200.jpg" />
+    <Content Include="public\resource\themes\images\SensorsCpl.dll_52.ico" />
+    <Content Include="public\resource\themes\images\test\12_mission_30_02.jpg" />
+    <Content Include="public\resource\themes\images\test\ahead.png" />
+    <Content Include="public\resource\themes\images\test\back.png" />
+    <Content Include="public\resource\themes\images\test\bar-background.png" />
+    <Content Include="public\resource\themes\images\test\close.png" />
+    <Content Include="public\resource\themes\images\test\computer.png" />
+    <Content Include="public\resource\themes\images\test\control.png" />
+    <Content Include="public\resource\themes\images\test\down-disable.png" />
+    <Content Include="public\resource\themes\images\test\img0.jpg" />
+    <Content Include="public\resource\themes\images\test\max.png" />
+    <Content Include="public\resource\themes\images\test\min.png" />
+    <Content Include="public\resource\themes\images\test\refresh.png" />
+    <Content Include="public\resource\themes\images\test\search.png" />
+    <Content Include="public\resource\themes\images\test\xia2.png" />
+    <Content Include="public\resource\themes\images\test\you.png" />
+    <Content Include="public\resource\themes\images\tumblr_mixmaoX0N91qz4j35o1_r1_1280.jpg" />
+    <Content Include="public\resource\themes\images\windows8\arrow-top.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-next-active.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-next-focus.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-next.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-prev-active.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-prev-focus.png" />
+    <Content Include="public\resource\themes\images\windows8\fb-prev.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-close-focus.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-close.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-max-focus.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-max.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-min-focus.png" />
+    <Content Include="public\resource\themes\images\windows8\panel-min.png" />
+    <Content Include="public\resource\themes\images\windows8\refresh.png" />
+    <Content Include="public\resource\themes\images\windows8\refresh2.png" />
+    <Content Include="public\resource\themes\images\windows8\triangle-bottom.png" />
+    <Content Include="public\resource\themes\images\wodediannao.png" />
+    <Content Include="public\resource\themes\lib\bg1.png" />
+    <Content Include="public\resource\themes\lib\logo.png" />
+    <Content Include="public\video\Gee.mp4" />
+    <Content Include="resource\style\desktop.css" />
+    <Content Include="resource\style\global.css" />
+    <Content Include="resource\style\icons.css" />
+    <Content Include="resource\style\lib\bootstrap-responsive.css" />
+    <Content Include="resource\style\lib\bootstrap.css" />
+    <Content Include="resource\style\lib\typica-login.css" />
+    <Content Include="resource\style\panel.css" />
+    <Content Include="resource\style\filebrowser.css" />
+    <Content Include="resource\style\tab-panel.css" />
+    <Content Include="resource\style\taskbar.css" />
+    <Content Include="resource\themes\images\desktop\task-bg-double.png" />
+    <Content Include="resource\themes\images\desktop\task-bg-many.png" />
+    <Content Include="resource\themes\images\desktop\task-bg.png" />
+    <Content Include="resource\themes\images\desktop\task-close.png" />
+    <Content Include="resource\themes\images\desktop\task-cmp-background.png" />
+    <Content Include="resource\themes\images\cipan.png" />
+    <Content Include="resource\themes\images\cipan2.png" />
+    <Content Include="resource\themes\images\desktop\file-click.png" />
+    <Content Include="resource\themes\images\desktop\file-double-click.png" />
+    <Content Include="resource\themes\images\desktop\file-double-focus.png" />
+    <Content Include="resource\themes\images\desktop\file-double.png" />
+    <Content Include="resource\themes\images\desktop\file-focus.png" />
+    <Content Include="resource\themes\images\desktop\file-many-click.png" />
+    <Content Include="resource\themes\images\desktop\file-many-focus.png" />
+    <Content Include="resource\themes\images\desktop\file-many.png" />
+    <Content Include="resource\themes\images\desktop\file.png" />
+    <Content Include="resource\themes\images\desktop\start-active.png" />
+    <Content Include="resource\themes\images\desktop\start.png" />
+    <Content Include="resource\themes\images\desktop\task-focus-bg.png" />
+    <Content Include="resource\themes\images\filder.png" />
+    <Content Include="resource\themes\images\icons\computer.png" />
+    <Content Include="resource\themes\images\icons\file-icon.png" />
+    <Content Include="resource\themes\images\icons\folder.png" />
+    <Content Include="resource\themes\images\icons\txt.png" />
+    <Content Include="resource\themes\images\icons\visualStudio.png" />
+    <Content Include="resource\themes\images\icons\vs-desktop.png" />
+    <Content Include="resource\themes\images\icons\vs-icon.png" />
+    <Content Include="resource\themes\images\icons\wodediannao.png" />
+    <Content Include="resource\themes\images\rain1920_1200.jpg" />
+    <Content Include="resource\themes\images\SensorsCpl.dll_52.ico" />
+    <Content Include="resource\themes\images\test\12_mission_30_02.jpg" />
+    <Content Include="resource\themes\images\test\ahead.png" />
+    <Content Include="resource\themes\images\test\back.png" />
+    <Content Include="resource\themes\images\test\bar-background.png" />
+    <Content Include="resource\themes\images\test\close.png" />
+    <Content Include="resource\themes\images\test\computer.png" />
+    <Content Include="resource\themes\images\test\control.png" />
+    <Content Include="resource\themes\images\test\down-disable.png" />
+    <Content Include="resource\themes\images\test\img0.jpg" />
+    <Content Include="resource\themes\images\test\max.png" />
+    <Content Include="resource\themes\images\test\min.png" />
+    <Content Include="resource\themes\images\test\refresh.png" />
+    <Content Include="resource\themes\images\test\search.png" />
+    <Content Include="resource\themes\images\test\xia2.png" />
+    <Content Include="resource\themes\images\test\you.png" />
+    <Content Include="resource\themes\images\tumblr_mixmaoX0N91qz4j35o1_r1_1280.jpg" />
+    <Content Include="resource\themes\images\windows8\arrow-top.png" />
+    <Content Include="resource\themes\images\windows8\fb-next.png" />
+    <Content Include="resource\themes\images\windows8\fb-prev.png" />
+    <Content Include="resource\themes\images\windows8\panel-close-focus.png" />
+    <Content Include="resource\themes\images\windows8\panel-close.png" />
+    <Content Include="resource\themes\images\windows8\panel-max-focus.png" />
+    <Content Include="resource\themes\images\windows8\panel-max.png" />
+    <Content Include="resource\themes\images\windows8\panel-min-focus.png" />
+    <Content Include="resource\themes\images\windows8\panel-min.png" />
+    <Content Include="resource\themes\images\windows8\refresh.png" />
+    <Content Include="resource\themes\images\windows8\refresh2.png" />
+    <Content Include="resource\themes\images\windows8\triangle-bottom.png" />
+    <Content Include="resource\themes\images\wodediannao.png" />
+    <TypeScriptCompile Include="test\windows\app.ts" />
+    <TypeScriptCompile Include="public\desktop\tab\Panel.ts" />
+    <TypeScriptCompile Include="public\desktop\application\Player.ts" />
+    <Content Include="public\desktop\application\Player.js">
+      <DependentUpon>Player.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\tab\Panel.js">
+      <DependentUpon>Panel.ts</DependentUpon>
+    </Content>
+    <Content Include="resource\themes\lib\bg1.png" />
+    <Content Include="resource\themes\lib\logo.png" />
+    <Content Include="routes\index.js" />
+    <Content Include="routes\user.js" />
+    <Content Include="server.js" />
+    <Content Include="test\windows\app.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <Content Include="test\windows\index.html" />
+    <TypeScriptCompile Include="public\desktop\desktop\TaskBar.ts" />
+    <TypeScriptCompile Include="public\desktop\desktop\Table.ts" />
+    <TypeScriptCompile Include="public\desktop\desktop\Shortcut.ts" />
+    <TypeScriptCompile Include="public\desktop\core\src\Util.ts" />
+    <Content Include="public\desktop\core\src\Util.js">
+      <DependentUpon>Util.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\desktop\FileBrowser.ts" />
+    <Content Include="public\desktop\desktop\FileBrowser.js">
+      <DependentUpon>FileBrowser.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\desktop\Shortcut.js">
+      <DependentUpon>Shortcut.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\desktop\Table.js">
+      <DependentUpon>Table.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\desktop\TaskBar.js">
+      <DependentUpon>TaskBar.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\panel\Panel.ts" />
+    <TypeScriptCompile Include="test\desktop\app\EditGrid.ts" />
+    <TypeScriptCompile Include="public\desktop\Observable.ts" />
+    <Content Include="public\desktop\Observable.js">
+      <DependentUpon>Observable.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\ContactForm.ts" />
+    <TypeScriptCompile Include="test\desktop\app\BaseForm.ts" />
+    <Content Include="test\desktop\app\alm.common.js" />
+    <Content Include="test\desktop\app\BaseForm.js">
+      <DependentUpon>BaseForm.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\ContactForm.js">
+      <DependentUpon>ContactForm.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\EditGrid.js">
+      <DependentUpon>EditGrid.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\panel\Panel.js">
+      <DependentUpon>Panel.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\BaseGrid.ts" />
+    <Content Include="test\desktop\app\BaseGrid.js">
+      <DependentUpon>BaseGrid.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\PageGrid.ts" />
+    <TypeScriptCompile Include="test\desktop\app\GrpupHeaderGrid.ts" />
+    <TypeScriptCompile Include="test\desktop\app\GroupHeaderGrid.ts" />
+    <TypeScriptCompile Include="test\desktop\app\Fieldcontainer.ts" />
+    <Content Include="test\desktop\app\Fieldcontainer.js">
+      <DependentUpon>Fieldcontainer.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\GroupHeaderGrid.js">
+      <DependentUpon>GroupHeaderGrid.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\GrpupHeaderGrid.js">
+      <DependentUpon>GrpupHeaderGrid.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\PageGrid.js">
+      <DependentUpon>PageGrid.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\TreeGrid.ts" />
+    <TypeScriptCompile Include="test\desktop\app\SuperTree.ts" />
+    <TypeScriptCompile Include="test\desktop\app\RateSimulating.ts" />
+    <Content Include="test\desktop\app\RateSimulating.js">
+      <DependentUpon>RateSimulating.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\Report.ts" />
+    <Content Include="test\desktop\app\Report.js">
+      <DependentUpon>Report.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\SuperTree.js">
+      <DependentUpon>SuperTree.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="test\desktop\app\TermStructor.ts" />
+    <Content Include="test\desktop\app\TermStructor.js">
+      <DependentUpon>TermStructor.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\app\treeData.js" />
+    <Content Include="test\desktop\app\TreeGrid.js">
+      <DependentUpon>TreeGrid.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop\index.html" />
+    <TypeScriptCompile Include="test\desktop\app.ts" />
+    <TypeScriptCompile Include="public\desktop\Compoment.ts" />
+    <Content Include="public\desktop\Compoment.js">
+      <DependentUpon>Compoment.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\desktop\Desktop.ts" />
+    <Content Include="public\desktop\desktop\Desktop.js">
+      <DependentUpon>Desktop.ts</DependentUpon>
+    </Content>
+    <Content Include="test\desktop.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="examples\" />
+    <Folder Include="interface\" />
+    <Folder Include="javascript\design\src\core\jquery-plugin\" />
+    <Folder Include="javascript\design\src\core\lib\" />
+    <Folder Include="uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="javascript\design\script\chart\chart\modules\tempfile.tmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="public\javascripts\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\javascripts\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\javascripts\dist\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="views\index.ejs" />
+    <Content Include="views\layout.jade" />
+    <Content Include="views\login.ejs" />
+    <Content Include="views\register.ejs" />
+    <Content Include="views\search.ejs" />
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>desktop</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21548</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51660/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="BeforeBuild">
+    <Exec Command="&quot;$(PROGRAMFILES)\Microsoft SDKs\TypeScript\tsc&quot; --module amd -target ES5 @(TypeScriptCompile ->'&quot;%(fullpath)&quot;', ' ')" />
+  </Target>
+</Project>

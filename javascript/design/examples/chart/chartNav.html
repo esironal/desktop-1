@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design Demo</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+
+<script src = "../../script/chart/chart/highcharts.js" ></script>
+<script src = "../../script/chart/highstock.js" ></script>
+<script src = "../../script/chart/modules/exporting.js" ></script>
+<script src = "../../script/jquery.ztree-3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/zTreeStyle/zTreeStyle.css"/>
+
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.chart.Chart']); 
+
+	
+
+	Design.onReady(function(){
+		var data = [['第一季度', 20],['第二季度', 20],['第三季度', 20],['第四季度', 20],['第五季度', 20]];
+		var items = [];
+		for (var i = 0; i < 3; i++) {
+			items.push({
+				xtype: 'panel',
+				style: {
+					width: 360,
+					height: 300,
+					float: 'left'
+				},
+				items: [{
+					xtype: 'chart',
+					style: {
+						width: '100%',
+						height: 250
+					},
+					data: data,
+					type: 'pie'
+				},{
+					xtype: 'panel',
+					style: {
+						width: "100%",
+						height: 48
+					},
+					html: '报表名称: <a href = "javascript: void(0);">流动性指标</a> <br/>描述: 流动性的指标等等操作'
+				}]
+			});
+		}
+		
+		
+		var panel = Design.widget('panel', {
+            style: {
+                width: '100%',
+                height: '100%'
+            },
+            title: {
+                text: '报表导航'
+            },
+            items: items
+        });
+		panel.render('body');
+		//chart.setPieChart(data, '营业额');
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

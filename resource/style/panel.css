@@ -1,0 +1,184 @@
+﻿.file-browser{
+    /*box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    border-radius: 7px;*/
+	position: absolute;
+    border:1px solid #3391c7;
+    background-color:#2db0f4;
+}
+
+
+.win-panel .title
+{
+    margin-left:auto;
+    margin-top:auto;
+    text-align:center;
+    margin-left: 100px;
+    height:29px; 
+    line-height:29px;
+    font-size:13px;
+}
+
+.icon
+{
+    background-position: inherit;
+}
+
+.icon-win8-min{
+    background-image:url(../themes/images/windows8/panel-min.png);
+    width:29px;
+    height:26px;
+}
+.icon-win8-max{
+    background-image:url(../themes/images/windows8/panel-max.png);
+    width:26px;
+    height:26px;
+}
+.icon-win8-close{
+    background-image:url(../themes/images/windows8/panel-close.png);
+    width:48px;
+    height:26px;
+}
+
+
+.icon-win8-min:hover
+{
+    background-image:url(../themes/images/windows8/panel-min-focus.png);
+    width:29px;
+    height:26px;
+}
+.icon-win8-max:hover
+{
+    background-image:url(../themes/images/windows8/panel-max-focus.png);
+    width:26px;
+    height:26px;
+}
+.icon-win8-close:hover
+{
+    background-image:url(../themes/images/windows8/panel-close-focus.png);
+    width:48px;
+    height:26px;
+}
+
+.win-panel
+{
+    position: relative;
+    background-color:#ebebeb;
+    float:left;
+}
+
+.win-panel-focus
+{
+    background-color:#bb4d45;
+}
+
+.win-panel-body
+{
+    bottom: 6px;
+    left: 6px;
+    top: 6px;
+    right: 6px;
+    position: absolute;
+    background:#fff;
+}
+
+.win-panel .header{
+    width:100%;
+    height:30px;
+    text-align: center;
+}
+
+
+
+
+.icon-min{
+    background-image:url(../themes/images/test/min.png);
+    width:29px;
+    height:19px;
+}
+.icon-max{
+    background-image:url(../themes/images/test/max.png);
+    width:26px;
+    height:19px;
+}
+.icon-close{
+    background-image:url(../themes/images/test/close.png);
+    width:48px;
+    height:19px;
+}
+
+.icon-disable-down{
+    /*background-image:url(../themes/images/test/down-disable.png);*/
+    width:9px;
+    height:6px;
+    margin-left:5px;
+    margin-top:10px;
+    float:left;
+}
+
+#background {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.toolbar{
+    margin-top:6px;
+    margin-left:6px;
+    margin-right:6px;
+    width:100%;
+    height:33px;
+    background:url("../themes/images/test/bar-background.png") repeat-x;
+    border-left:#fff;
+    border-right:#fff;
+}
+input:focus
+{
+            
+}
+
+
+/*window*/
+.design-resize-left, .design-resize-right  , .design-resize-bottom , .design-resize-left-bottom , .design-resize-right-bottom{
+	background:#b7bfca;
+	float: left;
+	position: absolute;
+	opacity: 0;                /* Firefox, Safari(WebKit), Opera,chrome/    filter: "alpha(opacity=60)"; /* IE 8 */
+	filter: alpha(opacity=0);   /* IE 4-7 */
+}
+.design-resize-left{
+	width:4px;
+	height: 100%;
+	cursor:e-resize; 
+	left:0px;
+	top:0px;
+}
+.design-resize-right{
+	width:4px;
+	height: 100%;
+	cursor:e-resize; 
+	right:0px;
+	top:0px;
+}
+.design-resize-bottom{
+	height:4px;
+	width:100%;
+	cursor:n-resize;
+	overflow:hidden; 
+	left:0px;
+	bottom:0px;
+}
+.design-resize-left-bottom{
+	height:4px;
+	width:4px;
+	cursor:sw-resize; 
+	left:0px;
+	bottom:0px;
+}
+.design-resize-right-bottom{
+	height:4px;
+	width:4px;
+	cursor:se-resize; 
+	right:0px;
+	bottom:0px;
+}

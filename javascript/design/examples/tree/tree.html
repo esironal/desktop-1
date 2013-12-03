@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone Demo</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+<script src = "jsonData.js" ></script>
+
+<script src = "../../script/jquery.ztree-3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/zTreeStyle/zTreeStyle.css"/>
+
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.tree.Tree']); 
+	
+	jsonData.forEach(function(item) {
+		item.name = item.itemname;
+	});
+	
+	Design.onReady(function(){
+
+	var tree = Design.widget('tree',{
+		title: {
+			text: 'tree'
+		},
+		drag: true,
+		style: {
+			width: 300,
+			height: 500,
+			'float': 'left'	
+		},
+		bodyStyle: {
+			overflow: 'auto'
+		},
+		datas: jsonData
+	});
+
+	tree.show('body');
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+
+<style>
+
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.grid.Tree', 'Design.data.Model','Design.data.Store']); 
+	
+	
+	
+	var myData = [{
+		 task:'Project:2222 Shopping',
+        duration:13.25,
+        user:'Tommy Maintz',
+        iconCls:'task-folder',
+		children:[]
+	}, {
+        task:'Project: Shopping',
+        duration:13.25,
+        user:'Tommy Maintz',
+        iconCls:'task-folder',
+        expanded: true,
+        children:[{
+            task:'Housewares',
+            duration:1.25,
+            user:'Tommy Maintz',
+            iconCls:'task-folder',
+            children:[{task:'Kitchen supplies',duration:0.25,user:'Tommy Maintz',leaf:true,iconCls:'task'
+            },{task:'Groceries',duration:.4,user:'Tommy Maintz',leaf:true,iconCls:'task'
+            },{task:'Cleaning supplies',duration:.4,user:'Tommy Maintz',leaf:true,iconCls:'task'
+            },{task: 'Office supplies',duration: .2,user: 'Tommy Maintz',leaf: true,iconCls: 'task'
+            }]
+        }, {
+            task:'Remodeling',
+            duration:12,
+            user:'Tommy Maintz',
+            iconCls:'task-folder',
+            expanded: true,
+            children:[{task:'Retile kitchen',duration:6.5,user:'Tommy Maintz',leaf:true,iconCls:'task'
+            },{task:'Paint bedroom',duration: 2.75,user:'Tommy Maintz',iconCls:'task-folder',
+                children: [{task: 'Ceiling',duration: 1.25,user: 'Tommy Maintz',iconCls: 'task',leaf: true
+                }, {task: 'Walls',duration: 1.5, user: 'Tommy Maintz',iconCls: 'task',leaf: true
+                }]
+            },{
+                task:'Decorate living room',duration:2.75, user:'Tommy Maintz',leaf:true,iconCls:'task'
+            },{
+                task: 'Fix lights',duration: .75,user: 'Tommy Maintz',leaf: true,iconCls: 'task'
+            }, {
+                task: 'Reattach screen door',duration: 2,user: 'Tommy Maintz',leaf: true,iconCls: 'task'
+            }]
+        }]
+    },{
+        task:'Project: Testing',
+        duration:2,
+        user:'Core Team',
+        iconCls:'task-folder',
+        children:[{
+            task: 'Mac OSX',
+            duration: 0.75,
+            user: 'Tommy Maintz',
+            iconCls: 'task-folder',
+            children: [{task: 'FireFox',duration: 0.25,user: 'Tommy Maintz',iconCls: 'task',leaf: true
+            }, {
+                task: 'Safari',duration: 0.25,user: 'Tommy Maintz',iconCls: 'task',leaf: true
+            }, {
+                task: 'Chrome',duration: 0.25,user: 'Tommy Maintz',iconCls: 'task',leaf: true
+            }]
+        },{
+            task: 'Windows',duration: 3.75,user: 'Darrell Meyer',iconCls: 'task-folder',
+            children: [{
+                task: 'FireFox',duration: 0.25,user: 'Darrell Meyer',iconCls: 'task',leaf: true
+            }, {
+                task: 'Safari',duration: 0.25,user: 'Darrell Meyer',iconCls: 'task',leaf: true
+            }, {
+                task: 'Chrome',duration: 0.25,user: 'Darrell Meyer',iconCls: 'task',leaf: true
+            },{
+                task: 'Internet Exploder',duration: 3, user: 'Darrell Meyer',iconCls: 'task',leaf: true
+            }]
+        },{
+            task: 'Linux', duration: 0.5,user: 'Aaron Conran',iconCls: 'task-folder',
+            children: [{task: 'FireFox',duration: 0.25,user: 'Aaron Conran',iconCls: 'task',leaf: true
+            }, {task: 'Chrome',duration: 0.25,user: 'Aaron Conran',iconCls: 'task',leaf: true
+            }]
+        }]
+    }];
+	
+	
+	
+	Design.onReady(function(){
+		
+		
+		Design.define('GridModel', {
+			extend: 'Design.data.Model',
+			fields: [{
+				name: 'task',
+				type: 'string'
+			},{
+				name: 'duration',
+				type: 'string'
+			},{
+				name: 'user',
+				type: 'string'
+			}]
+		});
+		
+		
+		var store = Design.create('Design.data.Store', {
+			model: 'GridModel',
+			data: myData
+		});
+		
+		
+		
+		var grid = Design.widget('treepanel', {
+			title: {
+				text: 'treeGrid'
+			},
+			bodyPadding: 0,
+			columnHeight: 40,
+			drag: true,
+			style: {
+				height: 350,
+				width: 600
+			},
+			columns: [
+				{text: 'task', width: 200, dataIndex: 'task', locked: true, treeColumn: true}, 
+				{text: 'duration', width: 125, dataIndex: 'duration'},
+				{text: 'user', width: 125, dataIndex: 'user'}
+			],
+			store:store
+		});
+		
+		grid.show('body');
+		
+		
+	});	
+</script>
+
+</head>
+<body>
+</body>
+</html>

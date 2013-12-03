@@ -1,0 +1,153 @@
+﻿
+
+
+.table-layout
+{
+    width: 64px;
+    height:88px;
+}
+
+
+
+
+.task-start
+{
+    float: left;
+    width:36px;
+    height:36px;
+    margin:2px 5px 0px 10px;
+    background: url("../themes/images/desktop/start.png");
+}
+
+.task-start:hover
+{
+    background: url("../themes/images/desktop/start-active.png");
+}
+
+
+
+.task-scan
+{
+    border:1px solid #000;
+    width:430px;
+    height:155px;
+    position: absolute;
+    z-index: 10000;
+    background: #bc4f47;
+    top:100px;
+    left:100px;
+}
+.task-scan > div
+{
+    margin:2px 0px 2px 0px;
+}
+.task-scan > div > div
+{
+    float:left;
+    padding:5px;
+    text-align:center;
+}
+.task-scan-item-text
+{
+    padding-left:15px;
+    height:20px;margin-top:1px;color:#333;font-size:11px;
+}
+.task-scan-item-img
+{
+    width:200px;height:120px; background:url('../themes/images/desktop/task-cmp-background.png')
+}
+
+.task-scan > div > div:hover
+{
+    background: rgba(255,255,255,0.2);
+    border-radius: 3px;
+}
+ 
+.task-scan > div:first-child
+{
+    margin-left:5px
+}
+
+
+.task-can-item-close{
+    float:right; width:12px;height:12px;background:url('../themes/images/windows8/close-win8-task.png')
+}
+
+.task-can-item-close:hover{
+    float:right; width:12px;height:12px;background:url('../themes/images/windows8/close-win8-task-hover.png')
+}
+
+
+.task-icon-bg
+{
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
+    height: 100%;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.task-icon-bg:hover
+{
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
+    height: 100%;
+    width: 100%;
+}
+
+.task-icon
+{
+    float: left;
+    width:60px;
+    height:40px;
+    margin:0px 5px 0px 10px;
+}
+.task-icon-one
+{
+    background-image: url("../themes/images/desktop/b1.png");
+}
+.task-icon-double
+{
+    background-image: url("../themes/images/desktop/b2.png");
+}
+.task-icon-many
+{
+    background-image: url("../themes/images/desktop/b3.png");
+}
+.task-icon-img:active
+{
+    margin:5px 8px 0px 15px;
+}
+.task-icon-img
+{
+    width:32px;
+    height:32px;
+    float: left;
+    margin:4px 6px 0px 14px;
+}
+
+.task-mvs
+{
+    background: url("../themes/images/icons/vs-icon.png");
+}
+
+
+
+
+#bottomBar
+{
+    position: absolute;
+    height: 45px;
+    width: 100%;
+    bottom: 0px;
+}
+#bottomBar .backgroundDiv
+{
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    background-color: #000;
+    
+    background:#bb4d45;
+    background:rgba(187,75,69,0.9);
+    bottom: 0px;
+    z-index: 11112;
+}

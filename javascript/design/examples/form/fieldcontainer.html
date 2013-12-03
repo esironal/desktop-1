@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Design</title>
+
+<!-- Core -->
+<script type="text/javascript" src="../../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/design-all.css"/>
+
+<script src = "../../src/core/src/Design.js" ></script>
+<script src = "../../src/core/src/Util.js" ></script>
+<script src = "../../src/core/src/Loader.js" ></script>
+<script src = "../../src/core/src/ClassManager.js" ></script>
+
+
+<script src = "../../script/jscal2.js"></script>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../../resource/css/jscal2/steel.css"/>
+
+<style>
+
+</style>
+<script>
+	
+	Design.Loader.setPath('Design', '../../src');
+	Design.require(['Design.form.Form']);  
+	
+	Design.onReady(function(){
+	
+		var form = Design.widget('form', {
+			style:{
+				width: 610,
+				height: 360
+			},
+			drag: true,
+			title: {
+				text: 'fieldcontainer'
+			},
+			bodyPadding: 15,
+			fieldDefaults: {
+				labelWidth: 100,
+				fieldStyle:{
+					width: 282
+				}
+			},
+			items: [{
+				xtype:'textfield',
+				label:'Email Address',
+				allowBlank: false,
+				name:'email',
+				vtype: 'email',
+				fieldStyle:{
+					width: 460
+				}
+			},{
+				xtype:'fieldcontainer',
+				label:'Date Range',
+				items:[
+					{xtype:'datefield',name: 'startDate', labelWidth:0, allowBlank: false, fieldStyle:{width:'224px'}},
+					{xtype:'datefield',name: 'endDate', labelWidth:10, allowBlank: false, fieldStyle:{width:'224px'}}
+				]
+			},{
+				xtype:'fieldset',
+				title:'Details',
+				items:[{
+					xtype:'fieldcontainer',
+					label:'phone',
+					labelWidth: 100,
+					items:[
+						{xtype:'displayfield',value:'(',fieldStyle:{'padding-right':'5px'}},
+						{xtype:'textfield',labelWidth:0,fieldStyle:{width:'23px'}},
+						{xtype:'displayfield',value:')',fieldStyle:{'padding-left':'5px','padding-right':'5px'}},
+						{xtype:'textfield',labelWidth:0,fieldStyle:{width:'30px'}},
+						{xtype:'displayfield',value:'-',fieldStyle:{'padding-left':'5px','padding-right':'5px'}},
+						{xtype:'textfield',labelWidth:0,fieldStyle:{width:'30px'}
+					}]
+				},{
+					xtype:'fieldcontainer',
+					label:'Time worked',
+					labelWidth: 100,
+					items:[
+						{xtype:'textfield',name: 'hours', labelWidth:0,fieldStyle:{width:'35px'}},
+						{xtype:'displayfield',value:'hours',fieldStyle:{'padding-right':'1px'}},
+						{xtype:'textfield',name: 'mins', fieldStyle:{width:'35px'}},
+						{xtype:'displayfield',value:'mins',fieldStyle:{'padding-right':'1px'}}
+					]
+				},{
+					xtype:'fieldcontainer',
+					label:'Full Name',
+					labelWidth: 100,
+					
+					items:[
+						{xtype:'combobox',name: 'hours', labelWidth:0,fieldStyle:{width:'55px'},value: 'mrs', displayField: 'name', valueField: 'value', data: [{name: 'Mr', value: 'mr'},{name: 'Mrs',  value: 'mrs'}, {name: 'Miss', value: 'miss'}]},
+						{xtype: 'textfield', name : 'firstName', labelWidth:10,  allowBlank: false, fieldStyle:{width:'180px'}},
+                        {xtype: 'textfield', name : 'lastName', labelWidth:10,  allowBlank: false, fieldStyle:{width:'180px'}}
+					]
+				}]
+			}],
+			buttons: [{
+				text: 'Save',
+				handler: function() {
+					alert('ff');
+				}
+			}, {
+				text: 'Cancel',
+				handler: function() {
+					alert('cancel');
+				}
+			}]
+		});
+		
+		
+		
+		
+		form.show();
+		
+		
+	});	
+</script>
+
+</head>
+<body>
+
+	<div id = "main" style = "width: 1000px; height: 1000px;"></div>
+
+</body>
+</html>

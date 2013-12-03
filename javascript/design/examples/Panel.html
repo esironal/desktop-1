@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Backbone Demo</title>
+
+<!-- Core -->
+
+<script type="text/javascript" src="../script/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="../script/template.js"></script>
+<link rel="stylesheet" type="text/css" href="../resource/css/design-all.css"/>
+
+<script src = "../src/core/src/Design.js" ></script>
+<script src = "../src/core/src/Util.js" ></script>
+<script src = "../src/core/src/Loader.js" ></script>
+<script src = "../src/core/src/ClassManager.js" ></script>
+
+<style>
+
+
+
+</style>
+<script>
+	
+	
+	Design.Loader.setPath('Design', '../src');
+	Design.require(['Design.panel.Panel']);
+	
+	Design.onReady(function(){
+	
+		var view = new Design.widget('panel', {
+			title: {
+				text: 'HelloWorld'
+			},
+			bodyPadding: 10,
+			style: {
+				width: '90%',
+				height: '90%'
+			},
+			renderTo: 'body'
+		});
+		
+
+	});
+	
+</script>
+
+</head>
+<body>
+</body>
+</html>
