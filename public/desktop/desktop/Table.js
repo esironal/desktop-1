@@ -129,7 +129,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
         };
 
         Table.prototype.contextmenu = function (event) {
-            return true;
+            //return true
             $('.content-menu').remove();
             var self = this;
 

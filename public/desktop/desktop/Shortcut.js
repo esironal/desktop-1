@@ -83,7 +83,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
             ];
         }
         Shortcut.prototype.contextmenu = function (event) {
-            return true;
+            //return true
             event.stopPropagation();
 
             $('.content-menu').remove();

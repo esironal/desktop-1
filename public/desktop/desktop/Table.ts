@@ -102,7 +102,7 @@ export class Table extends com.Compoment
 
     contextmenu(event) 
     { 
-        return true
+        //return true
         $('.content-menu').remove();
         var self = this;
 

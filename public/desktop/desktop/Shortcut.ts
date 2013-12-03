@@ -79,7 +79,7 @@ export class Shortcut extends com.Compoment{
     };
 
     contextmenu(event) {
-        return true
+        //return true
         event.stopPropagation();
 
         $('.content-menu').remove();
