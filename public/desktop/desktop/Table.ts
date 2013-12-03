@@ -44,7 +44,7 @@ om.Module.addApplication([{
                     value: 'flash视频'
                 }, {
                     key: 'image/jpeg',
-                    value: '图片'
+                    value: '图片' 
                 }],
                 name: 'type'
             }, {
