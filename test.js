@@ -255,17 +255,17 @@ function getInfo(url, callback, isUpdate)
             online_html.forEach(function (online_html, index)
             {
                 //online_html = online_html[0];
+                var names = ["百度影音"]
                 online_html.match(/<!--地址开始-->.*<!--地址结束-->/g).forEach(function (str, i)
                 {
                     var arr = str.replace(/<[^x00-xff]+>/g, '').split('$');
-                    var name = "百度影音"
+                    
+                    if (!names[index] && /[^第(\d|.)集]+/.exec(arr[0]))
+                        names[index] =names[0]+  /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
 
-                    if (/[^第(\d|.)集]+/.exec(arr[0]))
-                        name += /[^第(\d|.)集]+/.exec(arr[0])[0];
+                    bdMap[names[index]] = bdMap[names[index]] || [];
 
-                    bdMap[name] = bdMap[name] || [];
-
-                    bdMap[name].push({ index: i, src: arr[1], title: arr[0] });
+                    bdMap[names[index]].push({ index: i, src: arr[1], title: arr[0] });
 
                 });
             });
@@ -380,7 +380,7 @@ function getInfo(url, callback, isUpdate)
         for (var key in bdMap) {
             map.online[key]= bdMap[key]
         }
-
+        //console.log(map)
         if (!isUpdate) {
             downloadFile('./public/poster/', poster, url, function (name) {
                 map.poster = name;
