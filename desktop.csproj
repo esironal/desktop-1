@@ -275,6 +275,7 @@
     <Content Include="javascript\require.js" />
     <Content Include="javascript\template.js" />
     <TypeScriptCompile Include="public\app.ts" />
+    <Content Include="models\movie.js" />
     <Content Include="models\User.js" />
     <Content Include="models\File.js" />
     <Content Include="models\Application.js" />
@@ -293,6 +294,18 @@
     <TypeScriptCompile Include="public\desktop\form\Form.ts" />
     <TypeScriptCompile Include="public\desktop\form\fields\Combobox.ts" />
     <TypeScriptCompile Include="public\desktop\form\fields\BaseField.ts" />
+    <TypeScriptCompile Include="public\desktop\desktop\副本 Table.ts" />
+    <TypeScriptCompile Include="public\desktop\desktop\副本 FileBrowser.ts" />
+    <Content Include="public\desktop\desktop\副本 FileBrowser.js">
+      <DependentUpon>副本 FileBrowser.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="public\desktop\desktop\副本 Shortcut.ts" />
+    <Content Include="public\desktop\desktop\副本 Shortcut.js">
+      <DependentUpon>副本 Shortcut.ts</DependentUpon>
+    </Content>
+    <Content Include="public\desktop\desktop\副本 Table.js">
+      <DependentUpon>副本 Table.ts</DependentUpon>
+    </Content>
     <Content Include="public\desktop\form\fields\Combobox.js">
       <DependentUpon>Combobox.ts</DependentUpon>
     </Content>
@@ -306,6 +319,10 @@
     <Content Include="public\desktop\menu\ContextMenu.js">
       <DependentUpon>ContextMenu.ts</DependentUpon>
     </Content>
+    <TypeScriptCompile Include="public\desktop\menu\副本 ContextMenu.ts" />
+    <Content Include="public\desktop\menu\副本 ContextMenu.js">
+      <DependentUpon>副本 ContextMenu.ts</DependentUpon>
+    </Content>
     <Content Include="public\javascripts\dist\css\bootstrap-theme.css" />
     <Content Include="public\javascripts\dist\css\bootstrap-theme.min.css" />
     <Content Include="public\javascripts\dist\css\bootstrap.css" />
@@ -313,6 +330,7 @@
     <Content Include="public\javascripts\dist\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="public\javascripts\dist\js\bootstrap.js" />
     <Content Include="public\javascripts\dist\js\bootstrap.min.js" />
+    <Content Include="public\javascripts\jquery-1.10.2.js" />
     <Content Include="public\javascripts\jquery-2.0.2.js" />
     <Content Include="public\javascripts\lib\backstretch.min.js" />
     <Content Include="public\javascripts\lib\bootstrap.js" />
@@ -366,6 +384,7 @@
     <Content Include="public\resource\themes\images\icons\vs-desktop.png" />
     <Content Include="public\resource\themes\images\icons\vs-icon.png" />
     <Content Include="public\resource\themes\images\icons\wodediannao.png" />
+    <Content Include="public\resource\themes\images\movie\logo.png" />
     <Content Include="public\resource\themes\images\rain1920_1200.jpg" />
     <Content Include="public\resource\themes\images\SensorsCpl.dll_52.ico" />
     <Content Include="public\resource\themes\images\test\12_mission_30_02.jpg" />
@@ -383,6 +402,7 @@
     <Content Include="public\resource\themes\images\test\search.png" />
     <Content Include="public\resource\themes\images\test\xia2.png" />
     <Content Include="public\resource\themes\images\test\you.png" />
+    <Content Include="public\resource\themes\images\texture.png" />
     <Content Include="public\resource\themes\images\tumblr_mixmaoX0N91qz4j35o1_r1_1280.jpg" />
     <Content Include="public\resource\themes\images\windows8\arrow-top.png" />
     <Content Include="public\resource\themes\images\windows8\fb-next-active.png" />
@@ -487,6 +507,7 @@
     <Content Include="routes\index.js" />
     <Content Include="routes\user.js" />
     <Content Include="server.js" />
+    <Content Include="test.js" />
     <Content Include="test\windows\app.js">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
@@ -623,7 +644,8 @@
     <Content Include="views\layout.jade" />
     <Content Include="views\login.ejs" />
     <Content Include="views\register.ejs" />
-    <Content Include="views\search.ejs" />
+    <Content Include="views\movieHtml.ejs" />
+    <Content Include="views\movieList.ejs" />
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

@@ -6,6 +6,8 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 
+var Movie = require('../models/movie.js');
+
 exports.register = function (req, res)
 {
     res.render('register', { title: 'webOS' });
@@ -24,9 +26,47 @@ exports.index = function (req, res)
         res.render('login', { title: 'Express' });
 };
 
-exports.render = function (req, res)
-{
+exports.render = function (req, res) {
     res.render(req.query.url);
+}
+
+exports.movieHtml = function (req, res) {
+    res.render('movieHtml');
+}
+
+exports.search = function (req, res) {
+    console.log(req.body, req.query);
+    /{ title: req.query.searchword }/
+    Movie.find({}).limit(1000).skip(1).exec(function (err, list) {
+        res.render('movieList', { list: list });
+    });
+}
+
+function getHTML(url, callback) {
+    console.log(url, 'fffff')
+    var req = http.get(url, function (res) {
+        //var bufferHelper = new BufferHelper();
+        res.setEncoding('utf8');
+        var html = "";
+        res.on('data', function (chunk) {
+            //bufferHelper.concat(chunk);
+            html += chunk;
+        });
+
+        res.on('end', function (chunk) {
+            //var html= iconv.decode(bufferHelper.toBuffer(),'GBK');
+            console.log(html)
+            callback(html);
+        });
+    });
+
+    req.on('error', function (e) {
+        console.log('problem with request: ' + e.message);
+        exports.getHTML(url, callback)
+        //req.end();
+    });
+
+    req.end();
 }
 
 exports.getHtml = function (req2, res2)

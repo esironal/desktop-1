@@ -50,6 +50,13 @@
     background-color: #E5E5E5;
 }
 
+.content-menu .disabled a:hover{
+    
+    background-color: #fff;
+    color: #999;
+    cursor: auto;
+}
+
 .right-arrows
 {
     background-image: url("../themes/images/windows8/youjiantou.png");

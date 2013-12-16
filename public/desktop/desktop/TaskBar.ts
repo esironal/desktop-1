@@ -18,7 +18,7 @@ export class TaskBar extends com.Compoment{
     template = [
         '<div id="bottomBar">',
 		    '<div id="backDiv" class="backgroundDiv">',
-                '<div class="task-start"></div>',
+               
             '</div>',
         '</div>'
     ];

@@ -40,6 +40,8 @@ if( 'development' == app.get('env') ){
 }
 
 app.get('/', routes.index);
+app.get('/movieHtml', routes.movieHtml);
+app.get('/search', routes.search);
 app.get('/getHtml', routes.getHtml);
 app.get('/render', routes.render);
 app.get('/index', routes.index);
@@ -47,6 +49,7 @@ app.get('/register', routes.register);
 app.get('/login', routes.login);
 app.post('/register', user.register);
 app.post('/login', user.login);
+app.post('/mount', user.mount);
 app.post('/upload', user.upload);
 app.post('/createFile', user.createFile);
 app.post('/getFilesByPath', user.getFilesByPath);

@@ -22,6 +22,10 @@ export class Panel extends com.Compoment{
     };
     max = () => { };
 
+    mousedownTitle(event) {
+
+    }
+
     clickBtn(event) {
         var index = $(event.target).attr('index');
         this.buttons[index].handler.call(this);
@@ -75,9 +79,8 @@ export class Panel extends com.Compoment{
     initElement() 
     { 
         super.initElement();
-        this.setStyle(this.style);
         this.setBodyStyle(this.bodyStyle);
-        this.border && this.setBorder('thin solid #9a5d5a');
+        this.border && this.setBorder('thin solid #5284bc');
         this.dialog && this.setDialog();
         this.backgroundColor && this.setBodyStyle("background", this.backgroundColor);
     }

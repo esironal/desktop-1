@@ -4,11 +4,11 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", '../Compoment', "../desktop/OpenMode"], function(require, exports, __com__, __om__) {
+define(["require", "exports", '../Compoment'], function(require, exports, __com__) {
     var com = __com__;
     
     
-    var om = __om__;
+    
 
     var ContextMenu = (function (_super) {
         __extends(ContextMenu, _super);
@@ -31,9 +31,12 @@ define(["require", "exports", '../Compoment', "../desktop/OpenMode"], function(r
         }
         ContextMenu.prototype.click = function (event) {
             var target = $(event.target).parent("li");
-            if (!$(target).find('.right-arrows')[0]) {
-                var code = $(target).attr('code');
-                om.Module.excute(code, this.targetCmp);
+            if (!$(target).hasClass('disabled')) {
+                //var code = $(target).attr('code');
+                //om.Module.excute(code, this.targetCmp);
+                var fn = this.items[$(target).attr('index')]['handler'];
+                fn && fn(event);
+
                 $('.content-menu').remove();
             }
 
@@ -48,7 +51,14 @@ define(["require", "exports", '../Compoment', "../desktop/OpenMode"], function(r
                 if (this.items[i]["divider"]) {
                     $html = $('<li  class="divider"></li>');
                 } else {
-                    $html = $('<li code="' + (this.items[i]['code'] || '') + '" ><a>' + (this.items[i]["name"] || this.items[i]["text"]) + (this.items[i]['children'] ? '<div class="right-arrows"></div>' : '') + '</a></li>');
+                    $html = $('<li><a>' + this.items[i]["text"] + '</a></li>');
+                }
+
+                $html.attr('index', i);
+
+                if (this.items[i]['disabled']) {
+                    $html.addClass('disabled');
+                    $html.css('color', '#999');
                 }
 
                 if (this.items[i]['children']) {

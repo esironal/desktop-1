@@ -1,10 +1,19 @@
 
+Function.prototype.bind = function () {
+    var fn = this, args = Array.prototype.slice.call(arguments), object = args.shift();
+    return function () {
+        return fn.apply(object,
+            args.concat(Array.prototype.slice.call(arguments)));
+    };
+}; 
+
 import util = require("./core/src/Util")
 
 declare var TrimPath;
 declare var exports;
 
 var _index = 0;
+
 
 export class Compoment 
 {
@@ -16,6 +25,7 @@ export class Compoment
     public role: string;
     public id: string;
     public name: string;
+    public style: Object = {};
     public element: HTMLElement;
     public bodyElement: HTMLElement;
     public template: String[] = [];
@@ -42,9 +52,9 @@ export class Compoment
 
 		if( this.eventMap[eventname] ) 
         {
-		    this.eventMap[eventname].forEach((fn) => {
-		        fn.apply(that, arg);
-		    });
+            for (var i = 0; i < this.eventMap[eventname].length; i++){
+                this.eventMap[eventname][i].apply(that, arg);
+            }
 		}
 	}
 
@@ -75,7 +85,9 @@ export class Compoment
 	    this.element = $(template.process({ me: this }))[0];
 	    this.bodyElement = this.find('#' + this.id + '-body')[0] || this.element;
 	    this.width && this.setWidth(this.width);
-	    this.height && this.setHeight(this.height);
+        this.height && this.setHeight(this.height);
+
+            this.setStyle(this.style); 
 
 	}
 
@@ -87,7 +99,7 @@ export class Compoment
 
 	    var that = this;
 
-	    for (var key in events) 
+        for (var key in events) 
         {
 			var method = <Function>this[events[key]]
 			    , match = key.match(this.eventSplitter)
@@ -142,7 +154,11 @@ export class Compoment
     }
 
     add(cmp: Compoment) { 
-        this.items.push(cmp)
+        this.items.push(cmp);
+        
+        if (this.bodyElement) {
+            cmp.render(this.bodyElement);
+        }
     }
     
     show () { 

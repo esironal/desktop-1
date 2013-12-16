@@ -58,6 +58,9 @@ define(["require", "exports", '../Compoment', '../core/src/Util'], function(requ
                 '</div>'
             ];
         }
+        Panel.prototype.mousedownTitle = function (event) {
+        };
+
         Panel.prototype.clickBtn = function (event) {
             var index = $(event.target).attr('index');
             this.buttons[index].handler.call(this);
@@ -104,9 +107,8 @@ define(["require", "exports", '../Compoment', '../core/src/Util'], function(requ
 
         Panel.prototype.initElement = function () {
             _super.prototype.initElement.call(this);
-            this.setStyle(this.style);
             this.setBodyStyle(this.bodyStyle);
-            this.border && this.setBorder('thin solid #9a5d5a');
+            this.border && this.setBorder('thin solid #5284bc');
             this.dialog && this.setDialog();
             this.backgroundColor && this.setBodyStyle("background", this.backgroundColor);
         };

@@ -1,4 +1,11 @@
 define(["require", "exports", "./core/src/Util"], function(require, exports, __util__) {
+    Function.prototype.bind = function () {
+        var fn = this, args = Array.prototype.slice.call(arguments), object = args.shift();
+        return function () {
+            return fn.apply(object, args.concat(Array.prototype.slice.call(arguments)));
+        };
+    };
+
     var util = __util__;
 
     var _index = 0;
@@ -8,6 +15,7 @@ define(["require", "exports", "./core/src/Util"], function(require, exports, __u
             if (typeof config === "undefined") { config = {}; }
             this.eventMap = {};
             this.items = [];
+            this.style = {};
             this.template = [];
             this.eventSplitter = /^(\S+)\s*(.*)$/;
             this.config = config;
@@ -23,9 +31,9 @@ else
             var arg = arguments, that = this;
 
             if (this.eventMap[eventname]) {
-                this.eventMap[eventname].forEach(function (fn) {
-                    fn.apply(that, arg);
-                });
+                for (var i = 0; i < this.eventMap[eventname].length; i++) {
+                    this.eventMap[eventname][i].apply(that, arg);
+                }
             }
         };
 
@@ -54,6 +62,8 @@ else
             this.bodyElement = this.find('#' + this.id + '-body')[0] || this.element;
             this.width && this.setWidth(this.width);
             this.height && this.setHeight(this.height);
+
+            this.setStyle(this.style);
         };
 
         Compoment.prototype.delegateEvents = function (events) {
@@ -112,6 +122,10 @@ else
 
         Compoment.prototype.add = function (cmp) {
             this.items.push(cmp);
+
+            if (this.bodyElement) {
+                cmp.render(this.bodyElement);
+            }
         };
 
         Compoment.prototype.show = function () {

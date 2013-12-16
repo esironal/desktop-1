@@ -4,11 +4,12 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode", "../form/Form"], function(require, exports, __com__, __cmenu__, __om__, __form__) {
+define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode", "../form/Form", "../core/src/Util"], function(require, exports, __com__, __cmenu__, __om__, __form__, __util__) {
     var com = __com__;
     var cmenu = __cmenu__;
     var om = __om__;
     var form = __form__;
+    var util = __util__;
 
     om.Module.addApplication([
         {
@@ -20,8 +21,15 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
                     type: 'POST',
                     data: { parent_id: cmp.folder_id, type: 'folder', name: '新建文件夹' },
                     url: 'createFile',
-                    success: function (data) {
-                        cmp.getItemsByPath(cmp.path);
+                    success: function (record) {
+                        //cmp.getItemsByPath(cmp.path);
+                        $('.win-panel').each(function () {
+                            if ($(this).attr('filebrowser') !== cmp.folder_id) {
+                                return;
+                            }
+                            var browser = util.getCmp(this.id);
+                            browser.getItemsByPath(browser.path);
+                        });
                     },
                     error: function () {
                     }
@@ -134,7 +142,7 @@ define(["require", "exports", "../Compoment", "../menu/ContextMenu", "./OpenMode
         };
 
         Table.prototype.contextmenu = function (event) {
-            //return true
+            return true;
             $('.content-menu').remove();
             var self = this;
 

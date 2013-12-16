@@ -14,15 +14,20 @@ export class ContextMenu extends com.Compoment{
     targetCmp = null;
 
     click(event) { 
+        
         var target = $(event.target).parent("li");
-        if (!$(target).find('.right-arrows')[0]) { 
-            var code = $(target).attr('code');
-            om.Module.excute(code, this.targetCmp);
+        if (!$(target).hasClass('disabled')) { 
+            //var code = $(target).attr('code');
+            //om.Module.excute(code, this.targetCmp);
+            var fn = this.items[$(target).attr('index')]['handler']
+            fn && fn(event);
+
             $('.content-menu').remove();
         }
 
         event.stopPropagation();
     }
+
 
     constructor (config: Object = {}) {
         super(config);
@@ -39,8 +44,19 @@ export class ContextMenu extends com.Compoment{
                 $html = $('<li  class="divider"></li>');
             }
             else {
-                $html = $('<li code="'+(this.items[i]['code'] || '')+'" ><a>'+(this.items[i]["name"] || this.items[i]["text"])+(this.items[i]['children']?'<div class="right-arrows"></div>':'')+'</a></li>')
+                $html = $('<li><a>'+this.items[i]["text"]+'</a></li>')
             }
+
+            $html.attr('index', i);
+
+            if (this.items[i]['disabled']) {
+                $html.addClass('disabled');
+                $html.css('color', '#999');
+            }
+
+
+
+           // +(this.items[i]['children'] ? '<div class="right-arrows"></div>' : ''
 
             if (this.items[i]['children']) {
                

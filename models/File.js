@@ -6,7 +6,10 @@ var FileSchema = new Schema({
     parent_id: { type: String },
     filePath: { type: String },
     type: { type: String },
-    user_id: { type: String }
+    user_id: { type: String },
+    safe: { type: Boolean },
+
+    movie_id: { type: String }
 });
 
 mongoose.model('File', FileSchema);

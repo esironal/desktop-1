@@ -20,7 +20,7 @@ define(["require", "exports", '../Compoment', './TaskBar', './Table', './Shortcu
             this.path = "desktop";
             this.template = [
                 '<div id="${me.id}" style="width:100%;height:100%">',
-                '<div class="fullscreen_post_bg"  style="background-image:url(\'../../resource/themes/images/kungfupanda6.jpg\');">',
+                '<div class="fullscreen_post_bg"  style="background-image:url(\'../../resource/themes/images/img0.jpg\');">',
                 '</div>',
                 '</div>'
             ];

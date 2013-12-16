@@ -1,9 +1,9 @@
 ﻿.shortcut-text
 {
     height:auto;
-    margin-top:3px;
+    margin-top:5px;
     overflow:hidden;
-    font-size:13px;
+    font-size:12px;
     text-align:center;
     max-width: 110px;
     word-wrap: break-word;
@@ -15,8 +15,6 @@
 {
 
 }
-
-
 
 
 .shortcut-dragover

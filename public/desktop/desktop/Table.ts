@@ -2,6 +2,7 @@
 import cmenu = require("../menu/ContextMenu")
 import om = require("./OpenMode")
 import form = require("../form/Form")
+import util = require("../core/src/Util")
 
 om.Module.addApplication([{
     name: 'createFloder',
@@ -12,8 +13,16 @@ om.Module.addApplication([{
             type: 'POST',
             data: { parent_id: cmp.folder_id, type: 'folder', name: '新建文件夹' },
             url: 'createFile',
-            success: function (data) {
-                cmp.getItemsByPath(cmp.path);
+            success: function (record) {
+                //cmp.getItemsByPath(cmp.path);
+                $('.win-panel').each(function () {
+                    if ($(this).attr('filebrowser') !== cmp.folder_id) {
+                        return;
+                    }
+                    var browser = util.getCmp(this.id)
+                    browser.getItemsByPath(browser.path);
+                    
+                })
             },
             error: function () {
 
@@ -94,7 +103,7 @@ export class Table extends com.Compoment
     };
     
     clickShortcut(event)
-    { 
+    {
         if (window['keyDownMap'] && window['keyDownMap']['17']) {
             return;
         }
@@ -106,7 +115,7 @@ export class Table extends com.Compoment
 
     contextmenu(event) 
     { 
-        //return true
+        return true
         $('.content-menu').remove();
         var self = this;
 

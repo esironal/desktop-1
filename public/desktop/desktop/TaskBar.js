@@ -23,7 +23,6 @@ define(["require", "exports", '../Compoment', '../core/src/Util'], function(requ
             this.template = [
                 '<div id="bottomBar">',
                 '<div id="backDiv" class="backgroundDiv">',
-                '<div class="task-start"></div>',
                 '</div>',
                 '</div>'
             ];

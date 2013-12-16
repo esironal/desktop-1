@@ -33,7 +33,7 @@
     height:155px;
     position: absolute;
     z-index: 10000;
-    background: #bc4f47;
+    background: #5284bc;
     top:100px;
     left:100px;
 }
@@ -129,9 +129,6 @@
     background: url("../themes/images/icons/vs-icon.png");
 }
 
-
-
-
 #bottomBar
 {
     position: absolute;
@@ -146,8 +143,8 @@
     height: 40px;
     background-color: #000;
     
-    background:#bb4d45;
-    background:rgba(187,75,69,0.9);
+    background:#4f86c2;
+    background:rgba(79,135,195,0.9);
     bottom: 0px;
     z-index: 11112;
 }
