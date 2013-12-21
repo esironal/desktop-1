@@ -254,8 +254,11 @@ function getInfo(url, callback, isUpdate) {
                     
                     var arr = str.replace(/<[^x00-xff]+>/g, '').split('$');
 
-                    if (!names[index] && /[^第(\d|.)集]+/.exec(arr[0]))
+                    if (!names[index] && /[^第(\d|.|\-)集]+/.exec(arr[0]))
                         names[index] = names[0] + /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
+                    if (!names[index]) {
+                        namess[index] = names[0]+index
+                    }
 
                     bdMap[names[index]] = bdMap[names[index]] || [];
 

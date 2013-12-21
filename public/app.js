@@ -11,7 +11,8 @@
     var cmenu = __cmenu__;
 
     $(document).ready(function () {
-        document.domain = "localhost";
+        document.domain = document.domain = window.location.host.substring(0, window.location.host.length - 5);
+        ;
         $('body').click(function (event) {
             $('.content-menu').remove();
         });
