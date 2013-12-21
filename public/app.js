@@ -188,8 +188,7 @@
                             title: "电影搜索"
                         });
                         pn.render();
-
-                        pn.setHtml('<iframe style="width:100%;height:100%" src="http://localhost:3000">  </iframe>');
+                        pn.setHtml('<iframe style="width:100%;height:100%" src="http://' + document.domain + ':3000">  </iframe>');
 
                         desktop.taskBar.addTaskIcon(pn);
                     }
