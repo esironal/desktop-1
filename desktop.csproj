@@ -353,6 +353,7 @@
     <Content Include="public\resource\style\shortcut.css" />
     <Content Include="public\resource\themes\images\cipan.png" />
     <Content Include="public\resource\themes\images\cipan2.png" />
+    <Content Include="public\resource\themes\images\content_bg.jpg" />
     <Content Include="public\resource\themes\images\desktop\file-click.png" />
     <Content Include="public\resource\themes\images\desktop\file-double-click.png" />
     <Content Include="public\resource\themes\images\desktop\file-double-focus.png" />

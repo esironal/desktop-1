@@ -10,7 +10,6 @@ var dburl = 'mongodb://127.0.0.1/webOS';
 
 global.db = mongoose.connect(dburl);
 
-
 var app = express();
 
 app.configure(function ()

@@ -46,8 +46,7 @@ define(["require", "exports", '../Compoment', './TaskBar', './Table', './Shortcu
             });
             this.add(table);
             this.add(this.taskBar);
-
-            _super.prototype.initItems.call(this);
+            //super.initItems();
         };
 
         Desktop.prototype.initialize = function () {

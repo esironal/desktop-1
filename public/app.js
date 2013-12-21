@@ -11,6 +11,7 @@
     var cmenu = __cmenu__;
 
     $(document).ready(function () {
+        document.domain = "localhost";
         $('body').click(function (event) {
             $('.content-menu').remove();
         });
@@ -173,7 +174,7 @@
                     }
                 },
                 {
-                    text: "百度",
+                    text: "电影搜索",
                     icon: "baidu-icon",
                     type: "baidu",
                     dblclick: function (cfg) {
@@ -183,11 +184,11 @@
                             height: $("body").height() / 1.5,
                             dialog: true,
                             icon: 'baidu',
-                            title: "百度一下"
+                            title: "电影搜索"
                         });
                         pn.render();
 
-                        pn.setHtml('<iframe style="width:100%;height:100%" src="/movieHtml">  </iframe>');
+                        pn.setHtml('<iframe style="width:100%;height:100%" src="http://localhost:3000">  </iframe>');
 
                         desktop.taskBar.addTaskIcon(pn);
                     }

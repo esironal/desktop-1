@@ -43,7 +43,7 @@ export class Desktop extends com.Compoment
         this.add(table);
         this.add(this.taskBar);
         
-        super.initItems();
+        //super.initItems();
     }
 
     initialize() 

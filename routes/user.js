@@ -6,7 +6,7 @@ var fs = require("fs");
 
 //File.remove({}, function () { })
 File.find({}, function (err, rec) {
-    console.log(rec)
+    //console.log(rec)
 })
 exports.login = function (req, res)
 {
@@ -81,9 +81,11 @@ exports.mount = function (req, res)
 {
     var movie_id = req.body.id;
     
-    Find.find({ movie_id: movie_id }, function () {
+    File.findOne({ movie_id: movie_id }, function (err, m) {
 
-    });
+        console.log(m)
+        if(m)
+            return res.json('false')
 
     Movie.findById(movie_id, function (err, movie)
     {
@@ -105,6 +107,9 @@ exports.mount = function (req, res)
                 res.json(JSON.stringify(data))
             });
         });
+    });
+
+
     });
 }
 

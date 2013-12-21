@@ -34,10 +34,19 @@ exports.movieHtml = function (req, res) {
     res.render('movieHtml');
 }
 
-exports.search = function (req, res) {
-    console.log(req.body, req.query);
-    /{ title: req.query.searchword }/
-    Movie.find({}).limit(1000).skip(1).exec(function (err, list) {
+exports.search = function (req, res)
+{
+    var searchword = new RegExp(req.query.searchword, 'i');
+
+    var query = {
+        $or: [
+            { title: searchword }
+            , { casts: { $in: [searchword] } }
+            , { directors: { $in: [searchword] } }
+        ]
+    }
+
+    Movie.find(query).limit(20).skip(0).exec(function (err, list) {
         res.render('movieList', { list: list });
     });
 }
