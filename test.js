@@ -257,7 +257,7 @@ function getInfo(url, callback, isUpdate) {
                     if (!names[index] && /[^第(\d|.|\-)集]+/.exec(arr[0]))
                         names[index] = "百度影音" + /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
                     if (!names[index]) {
-                        names[index] = "百度影音"+index
+                        names[index] = "百度影音"+ (index?index:'')
                     }
 
                     bdMap[names[index]] = bdMap[names[index]] || [];
@@ -485,7 +485,7 @@ function run()
         return;
 
     addByPage(++start, function () {
-        run(++start, count);
+        run(++start);
     });
 }
 
