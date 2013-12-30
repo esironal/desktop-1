@@ -254,7 +254,6 @@ function getInfo(url, callback, isUpdate) {
                 mathch.forEach(function (str, i) {
                     
                     var arr = str.replace(/<[^x00-xff]+>/g, '').split('$');
-                    console.log(arr)
                     if (!names[index] && /[^第(\d|.|\-)集]+/.exec(arr[0]))
                         names[index] = "百度影音" + /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
                     if (!names[index]) {
