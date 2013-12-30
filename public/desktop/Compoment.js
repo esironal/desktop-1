@@ -176,6 +176,9 @@ else
             $(this.bodyElement).addClass(name);
         };
 
+        Compoment.prototype.hasClass = function (name) {
+            return $(this.element).hasClass(name);
+        };
         Compoment.prototype.setStyle = function (key, value) {
             $(this.element).css(key, value);
         };

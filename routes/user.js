@@ -64,6 +64,12 @@ exports.createFile = function (req, res)
 
 exports.deleteFile = function (req, res)
 {
+    console.log(req.body.id);
+
+    File.findById(req.body.id, function () {
+        console.log(arguments);
+    });
+
     File.findByIdAndRemove(req.body.id, function (err, record) {
         if (err) throw new Error();
         res.json({ title: 'webOS' });
@@ -82,8 +88,6 @@ exports.mount = function (req, res)
     var movie_id = req.body.id;
     
     File.findOne({ movie_id: movie_id }, function (err, m) {
-
-        console.log(m)
         if(m)
             return res.json('false')
 
@@ -127,58 +131,61 @@ exports.getFilesByPath = function (req, res)
     var online = req.body.online;
     delete req.body.title;
 
-    console.log(req.body);
 
     if (req.body.type === 'movie_folder' || req.body.type === 'online_folder')
     {
-        Movie.findById(req.body._id, function (err, movie)
+        File.findById(req.body._id, function (err, file)
         {
-            if (!movie) {
-                return res.json([]);
-            }
 
-            var onlineFolders = [];
-            
-            if (req.body.online_name)
+            Movie.findById(file.movie_id, function (err, movie)
             {
-                var online = movie.online[req.body.online_name];
-                console.log(req.body.online_name);
-                online.forEach(function (rec)
-                {
-                    var map = {};
-                    map.type = 'flashPlayer';
-                    console.log(req.body.online_name, /百度影音/.test(req.body.online_name))
-                    if (/百度影音/.test(req.body.online_name)) {
-                        map.type = 'baiduPlayer';
-                    }
-                    map.name = rec.title;
-                    map.filePath = rec.src;
-                    
-                    map.movie_id = movie._id;
-                    map.safe = true;
-                    onlineFolders.push(map);
+                if (!movie) {
+                    return res.json([]);
+                }
 
-                });
+                var onlineFolders = [];
+
+                if (req.body.online_name)
+                {
+                    var online = movie.online[req.body.online_name];
+
+                    online.forEach(function (rec) {
+                        var map = {};
+                        map.type = 'flashPlayer';
+
+                        if (/百度影音/.test(req.body.online_name)) {
+                            map.type = 'baiduPlayer';
+                        }
+                        map.name = rec.title;
+                        map.filePath = rec.src;
+
+                        map._id = file._id;
+                        map.safe = true;
+                        onlineFolders.push(map);
+
+                    });
+
+                    res.json(onlineFolders);
+
+                    return;
+                }
+
+                for (var key in movie.online) {
+                    if (movie.online[key].length) {
+                        var map = {};
+                        map.type = 'online_folder';
+                        map.name = key;
+                        map._id = file._id;
+                        map.safe = true;
+                        onlineFolders.push(map);
+                    }
+                }
 
                 res.json(onlineFolders);
+            });
 
-                return;
-            }
-
-            for(var key in movie.online)
-            {
-                if (movie.online[key].length) {
-                    var map = {};
-                    map.type = 'online_folder';
-                    map.name = key;
-                    map.movie_id = movie._id;
-                    map.safe = true;
-                    onlineFolders.push(map);
-                }
-            }
-
-            res.json(onlineFolders);
         });
+        
 
         return;
     }

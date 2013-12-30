@@ -103,8 +103,11 @@ export function dialog(config)
 
     $(config.eventEl).on('mousedown', function(event)
     {
-		if (event.target != config.eventEl) { 
-            return;
+        if (event.target != config.eventEl) { 
+            if (!$(event.target).hasClass('title')) {
+                return;
+            }
+             // return;
         }
 		isDown = true;
 		var xx = event.screenX; 
@@ -118,6 +121,20 @@ export function dialog(config)
 
     var max = function () 
     { 
+        if (isMax) {
+            isMax = false;
+            $(config.element).width(beforeSize["width"]);
+            $(config.element).height(beforeSize["height"]);
+            $(config.element).css("top", beforeSize["top"]);
+            $(config.element).css("left", beforeSize["left"]);
+
+            if (config.onResize) {
+                config.onResize();
+            }
+            return;
+        }
+        
+
         var width = $("body").width(),
         height = $("body").height();
 

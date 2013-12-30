@@ -33,6 +33,13 @@ define(["require", "exports", "../panel/Panel", '../core/src/Util'], function(re
             }
         };
 
+        Player.prototype.hide = function () {
+            //alert('h')
+            this.setStyle('z-index', '-1000');
+            this.removeClass('win-panel-focus');
+            //super.hide();
+        };
+
         Player.prototype.setDialog = function () {
             var self = this;
             this.setStyle('position', 'absolute');

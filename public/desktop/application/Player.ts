@@ -26,6 +26,13 @@ export class Player extends panel.Panel {
         }
     }
 
+    hide() {
+        //alert('h')
+        this.setStyle('z-index', '-1000');
+        this.removeClass('win-panel-focus');
+        //super.hide();
+    }
+
     setDialog() {
         var self = this
         ;

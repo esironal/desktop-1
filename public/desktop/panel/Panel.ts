@@ -39,6 +39,7 @@ export class Panel extends com.Compoment{
             $('.win-panel').removeClass('win-panel-focus');
             this.addClass('win-panel-focus');
         }
+        
     }
 
     setBorder(val) { 
@@ -102,9 +103,14 @@ export class Panel extends com.Compoment{
         this.setFocus();
     }
 
-    show() { 
+    show() {
         super.show();
         this.setFocus();
+    }
+
+    hide() {
+        super.hide();
+        this.removeClass('win-panel-focus');
     }
 
     setTitle(title) { 

@@ -157,6 +157,7 @@ function getInfo(url, callback, isUpdate) {
             , souhuList = []
             , qiyiList = []
             , woleList = []
+            , qvodList = []
         ;
 
         //        console.log(url)
@@ -248,16 +249,16 @@ function getInfo(url, callback, isUpdate) {
         if (online_html) {
             online_html.forEach(function (online_html, index) {
                 //online_html = online_html[0];
-                var names = ["百度影音"]
+                var names = []
                 var mathch = ( online_html.match(/<!--地址开始-->.*<!--地址结束-->/g) || [])
                 mathch.forEach(function (str, i) {
                     
                     var arr = str.replace(/<[^x00-xff]+>/g, '').split('$');
-
+                    console.log(arr)
                     if (!names[index] && /[^第(\d|.|\-)集]+/.exec(arr[0]))
-                        names[index] = names[0] + /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
+                        names[index] = "百度影音" + /[^第(\d|.|\-)集]+/.exec(arr[0])[0];
                     if (!names[index]) {
-                        namess[index] = names[0]+index
+                        names[index] = "百度影音"+index
                     }
 
                     bdMap[names[index]] = bdMap[names[index]] || [];
@@ -354,6 +355,18 @@ function getInfo(url, callback, isUpdate) {
             });
         }
 
+
+        online_html = /<!--qvod播放列表开始代码-->[\s\S]*?<!--qvod播放列表结束代码-->/.exec(html)
+
+        if (online_html) {
+            online_html = online_html[0];
+
+            online_html.match(/<!--地址开始-->.*<!--地址结束-->/g).forEach(function (str, i) {
+                var arr = str.replace(/<[^x00-xff]+>/g, '').split('$');
+                qvodList.push({ index: i, src: arr[1], title: arr[0] })
+            });
+        }
+
         map.online = {
             '优酷视频': youkuList
             , '其它视频': swfList
@@ -363,6 +376,7 @@ function getInfo(url, callback, isUpdate) {
             , '腾讯视频': tengxunList
             , '乐视视频': leshList
             , '土豆视频': tudouList
+            , 'qvod快播': qvodList
         }
 
 
@@ -457,45 +471,28 @@ function addByPage(i, callback)
                 });
             })
         });
-
-        //console.log(arr);
     });
 }
 
-var start = 1
-    , end = 10
+var start = 0
+    , active = 10
+    , end = 700
+    , index = 0
     ;
 
-function run(i, count)
+function run()
 {
-    if (i > 10)
+    if (start > end)
         return;
 
-    addByPage(i, function () {
-        run(++i, count);
+    addByPage(++start, function () {
+        run(++start, count);
     });
 }
 
-run(start, end);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for (var i = 0; i < active; i++) {
+    run();
+}
 
 
 

@@ -43,7 +43,19 @@ $(document).ready(function ()
                     disabled: shortcut.safe,
                     text: "删除",
                     handler: function (event) {
-                        alert('删除');
+                        alert(shortcut.file_id);
+                        $.ajax(
+                        {
+                            type: 'POST',
+                            data: { id: shortcut.file_id },
+                            url: 'deleteFile',
+                            success: function (data) {
+                                shortcut.destroy();
+                            },
+                            error: function () {
+
+                            }
+                        });
                     }
                 },
                 {
@@ -87,13 +99,13 @@ $(document).ready(function ()
 
                     if (records[i].type === 'movie_folder') {
                         rec['icon'] = 'folder-icon';
-                        rec.file_id = records[i].movie_id;
+                        //rec.file_id = records[i].movie_id;
                     }
 
                     if (records[i].type === 'online_folder') {
                         rec['icon'] = 'folder-icon';
                         rec['online_name'] = records[i].name;
-                        rec.file_id = records[i].movie_id;
+                        //rec.file_id = records[i].movie_id;
                     }
 
                     rec['dblclick'] = function (event)

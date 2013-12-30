@@ -67,14 +67,13 @@ define(["require", "exports", '../Compoment', '../core/src/Util'], function(requ
             if (this.iconMap[code].length === 1) {
                 cmp = this.iconMap[code][0];
 
-                if (cmp.isShow()) {
+                if (cmp.hasClass('win-panel-focus')) {
                     this.iconMap[code][0].hide();
                 } else {
                     this.iconMap[code][0].show(true);
+                    window['z-index'] = window['z-index'] + 1 || 100;
+                    $(cmp.element || cmp['el']).css('z-index', window['z-index']);
                 }
-
-                window['z-index'] = window['z-index'] + 1 || 100;
-                $(cmp.element || cmp['el']).css('z-index', window['z-index']);
             } else {
                 var top = $(event.target).position().top;
                 var left = 10;

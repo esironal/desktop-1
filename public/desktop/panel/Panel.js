@@ -135,6 +135,11 @@ else
             this.setFocus();
         };
 
+        Panel.prototype.hide = function () {
+            _super.prototype.hide.call(this);
+            this.removeClass('win-panel-focus');
+        };
+
         Panel.prototype.setTitle = function (title) {
             this.find('.title').html(title);
             this.title = title;

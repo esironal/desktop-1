@@ -208,7 +208,10 @@ export class Compoment
     addBodyClass(name) {
         $(this.bodyElement).addClass(name);
     }
-    
+
+    hasClass(name) {
+        return $(this.element).hasClass(name);
+    }
     setStyle(key, value?) { 
         $(this.element).css(key, value);
     }
