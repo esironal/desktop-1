@@ -485,7 +485,7 @@ function run()
         return;
 
     addByPage(++start, function () {
-        run(++start);
+        run();
     });
 }
 
