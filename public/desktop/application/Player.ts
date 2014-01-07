@@ -12,13 +12,13 @@ export class Player extends panel.Panel {
         super.initElement();
         //this.setTitle(this.name);
         if (this.type === "baiduPlayer") {
-            this.setHtml('<object classid="clsid:F3D0D36F-23F8-4682-A195-74C92B03D4AF" width="100%" height="100%" id="QvodPlayer" name="QvodPlayer" onError=if(window.confirm(\'请您先安装QvodPlayer软件,然后刷新本页才可以正常播放.\')){window.open(\'http://www.qvod.com/download.htm\')}else{self.location=\'http://www.qvod.com/\'}><PARAM NAME=\'URL\' VALUE=\'' + this.filePath + '\'><PARAM NAME=\'Autoplay\' VALUE=\'1\'><embed URL=\'qvod://222013754|2741085D552DB65D5E71B767BB1473EEC4B0626E|总理和我第08集.rmvb|\' type=\'application/qvod-plugin\'></embed></object>');
+            this.setHtml('<object classid="clsid:F3D0D36F-23F8-4682-A195-74C92B03D4AF" width="100%" height="100%" id="QvodPlayer" name="QvodPlayer" onError=if(window.confirm(\'请您先安装QvodPlayer软件,然后刷新本页才可以正常播放.\')){window.open(\'http://www.qvod.com/download.htm\')}else{self.location=\'http://www.qvod.com/\'}><PARAM NAME=\'URL\' VALUE=\'' + this.filePath + '\'><PARAM NAME=\'Autoplay\' VALUE=\'1\'><embed style="width:100%;height:100%;" URL=\'' + this.filePath + '\' type=\'application/qvod-plugin\'></embed></object>');
         }
         else if(this.type === 'flashPlayer') {
             this.setHtml('<embed src="' + this.filePath + '" allowFullScreen="true" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>');
         }
         else if (this.type === 'qvodPlayer') {
-            this.setHtml('<object classid="clsid:F3D0D36F-23F8-4682-A195-74C92B03D4AF" width="100%" height="100%" id="QvodPlayer" name="QvodPlayer" onError=if(window.confirm(\'请您先安装QvodPlayer软件,然后刷新本页才可以正常播放.\')){window.open(\'http://www.qvod.com/download.htm\')}else{self.location=\'http://www.qvod.com/\'}><PARAM NAME=\'URL\' VALUE=\'' + this.filePath + '\'><PARAM NAME=\'Autoplay\' VALUE=\'1\'><embed URL=\'qvod://222013754|2741085D552DB65D5E71B767BB1473EEC4B0626E|总理和我第08集.rmvb|\' type=\'application/qvod-plugin\'></embed></object>');
+            this.setHtml('<object classid="clsid:F3D0D36F-23F8-4682-A195-74C92B03D4AF" width="100%" height="100%" id="QvodPlayer" name="QvodPlayer" onError=if(window.confirm(\'请您先安装QvodPlayer软件,然后刷新本页才可以正常播放.\')){window.open(\'http://www.qvod.com/download.htm\')}else{self.location=\'http://www.qvod.com/\'}><PARAM NAME=\'URL\' VALUE=\'' + this.filePath + '\'><PARAM NAME=\'Autoplay\' VALUE=\'1\'><embed style="width:100%;height:100%;" URL=\'' + this.filePath + '\' type=\'application/qvod-plugin\'></embed></object>');
         }
     }
 
