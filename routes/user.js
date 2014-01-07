@@ -156,6 +156,12 @@ exports.getFilesByPath = function (req, res)
                         if (/百度影音/.test(req.body.online_name)) {
                             map.type = 'baiduPlayer';
                         }
+                        if (/qvod快播/.test(req.body.online_name)) {
+                            map.type = 'qvodPlayer';
+                        }
+
+
+
                         map.name = rec.title;
                         map.filePath = rec.src;
 
